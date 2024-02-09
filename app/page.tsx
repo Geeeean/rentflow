@@ -163,7 +163,7 @@ export default function Home() {
           <div className='relative'>
             <Image src={logo} alt='logo' layout="responsive" objectFit="containt" />
           </div>
-          <div className='md:flex items-center gap-12 font-sans text-lg font-thin text-gray-600 hidden '>
+          <div className='md:flex items-center gap-12 font-sans text-lg font-medium text-gray-600 hidden '>
             {MOBILE_NAV_ITEMS.map((navItem, index) => (
               <button className="hover:text-black" key={index}>{navItem.navTitle}</button>
             ))}
