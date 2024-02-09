@@ -8,7 +8,7 @@ type Props = {
 
 const Card = ({ tag, title, subtitle, desc, btnText }: Props) => {
     return (
-        <div className='shrink bg-gray-50 shadow-sm p-5 flex flex-col items-center rounded-xl gap-4'>
+        <div className='shrink bg-gray-50 shadow-sm p-5 flex flex-col items-center rounded-xl gap-4 text-center'>
             <div className={"h-16 justify-center items-center" + (tag ? "flex" : "hidden md:flex")}>
                 {tag ? <div className='bg-blue-100 font-bold text-blue-600 px-3 py-1 rounded-full tracking-wide h-fit w-fit'>SERVIZIO COMPLETO</div> : ""}
             </div>
