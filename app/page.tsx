@@ -133,11 +133,11 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className={isOpen ? "overflow-hidden h-screen" : ""}>
       <motion.div className="w-full min-h-screen bg-grey-50 flex flex-col items-center justify-between" animate={isOpen ? "open" : "closed"} >
         <motion.nav
           className="bg-gray-900 h-screen w-screen absolute left-0 index z-10 md:hidden p-4 text-gray-50 font-mono"
-          initial={closed}
+          initial={mobileMenuVariant.closed}
           variants={mobileMenuVariant}
         >
           <div className="w-full flex justify-end">
