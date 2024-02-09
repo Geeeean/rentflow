@@ -1,5 +1,24 @@
 import './global.css'
 
+import Card from './components/Card';
+
+const cardCont = [
+  {
+    tag: "SERVIZIO COMPLETO",
+    title: "Rent to Rent",
+    subtitle: "Il rendimento sicuro che cercavi",
+    desc: "Gestiremo noi i tuoi affitti garantendo un flusso continuo di clienti.",
+    btnText: "Scopri ora"
+  },
+  {
+    tag: "",
+    title: "Gestione",
+    subtitle: "Online e fisica",
+    desc: "Gestiremo noi il tuo immobile, garantendo il massimo della resa con il minimo sforzo.",
+    btnText: "Scopri ora"
+  }
+]
+
 export default function Home() {
   return (
     <main>
@@ -11,26 +30,10 @@ export default function Home() {
           <p className="font-sans text-xl md:text-2xl text-gray-400">Forniamo due principali servizi per i tuoi appartamenti.</p>
         </div>
         
-        <div className="flex flex-col gap-5 md:flex-row justify-center">
-
-          <div className='shrink bg-gray-50 shadow-sm p-5 flex flex-col items-center rounded-xl gap-4 w-80'>
-            <div className='h-16 flex justify-center items-center'>
-              <div className='bg-blue-100 font-bold text-blue-600 px-3 py-1 rounded-full tracking-wide h-fit w-fit'>SERVIZIO COMPLETO</div>
-            </div>
-            <p className='bold text-5xl font-bold mb-2'>Rent to Rent</p>
-            <p className='mb-5 text-xl font-light text-gray-700'>Il rendimento sicuro che cercavi</p>
-            <p className='text-center mb-8 text-xl'>Gestiremo noi i tuoi affitti garantendo un flusso continuo di clienti.</p>
-            <button className='font-bold text-gray-50 w-full py-4 rounded-lg bg-blue-600 hover:bg-blue-700'>Scopri ora</button>
-          </div>
-
-          <div className='shrink bg-gray-50 shadow-sm p-5 flex flex-col items-center rounded-xl gap-4 w-80'>
-            <div className='h-16 hidden md:flex justify-center items-center'></div>
-            <p className='bold text-5xl font-bold mb-2'>Gestione</p>
-            <p className='mb-5 text-xl font-light text-gray-700'>Online e fisica</p>
-            <p className='text-center mb-8 text-xl'>Gestiremo noi il tuo immobile, garantendo il massimo della resa con il minimo sforzo.</p>
-            <button className='font-bold text-gray-50 w-full py-4 rounded-lg bg-blue-600 hover:bg-blue-700'>Scopri ora</button>
-          </div>
-
+        <div className="flex flex-col gap-5 md:flex-row justify-center">      
+          {cardCont.map(({tag, title, subtitle, desc, btnText}, index) => {
+            return <Card key={index} tag={tag} title={title} subtitle={subtitle} desc={desc} btnText={btnText} />
+          })}
         </div>
       </div>
       <div></div>
