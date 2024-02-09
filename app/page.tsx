@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <div className="w-screen h-screen bg-black"></div>
-      <div className="w-screen min-h-screen bg-gray-900 flex gap-10 flex-col items-center justify-center p-10">
+      <div className="w-screen min-h-screen bg-red-500 flex gap-10 flex-col items-center justify-center p-10">
 
         <div className="flex flex-col text-center gap-2">
           <p className="font-mono text-2xl md:text-4xl font-bold text-gray-50">I nostri servizi</p>
