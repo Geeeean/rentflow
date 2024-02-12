@@ -252,7 +252,7 @@ export default function Home() {
           { tag: "Servizio", title: "Rent to Rent", descStart: "La soluzione", descTag: "più sicura", descEnd: "per i proprietari", image: rtr, gridContent: RTR_ITEMS },
           { tag: "Servizio di", title: "Gestione immobili", descStart: "Fai", descTag: "fruttare", descEnd: "il tuo appartamento", image: pm, gridContent: PROPERTY_MANAGEMENT_ITEMS }
         ].map((item, index) => {
-          return <div key={index} className="w-full min-h-screen bg-gray-50 flex gap-10 flex-col items-center justify-center p-4 md:p-10 md:px-24">
+          return <div key={index} className="w-full my-8 flex gap-10 flex-col items-center justify-center p-4 md:p-10 md:px-24">
             <div className='flex justify-center md:justify-between w-full text-center md:text-left'>
               <div className='flex flex-col justify-center'>
 
