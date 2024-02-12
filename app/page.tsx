@@ -7,6 +7,7 @@ import Image from 'next/image';
 import logo from "@/public/logo.svg";
 import build from "@/public/build.png"
 import rtr from "@/public/rtr.svg"
+import pm from "@/public/p_management.svg"
 
 import Card from './components/Card';
 import CompanyFlex from './components/CompanyFlex';
@@ -14,7 +15,7 @@ import Grid2x2 from './components/Grid2x2';
 
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
-import { FcOvertime, FcMindMap, FcApproval, FcSurvey } from "react-icons/fc";
+import { FcOvertime, FcMindMap, FcApproval, FcSurvey, FcSearch, FcHome, FcKey, FcMoneyTransfer } from "react-icons/fc";
 
 
 import { motion } from "framer-motion"
@@ -77,24 +78,24 @@ const RTR_ITEMS = [
 
 const PROPERTY_MANAGEMENT_ITEMS = [
   {
-    icon: <FcOvertime />,
-    tag: "Zero rischio morosità",
-    desc: "Garanzia di ricevere regolarmente il pagamento dell’affitto, a differenza di ciò che potrebbe capitare con gli affitti tradizionali."
+    icon: <FcMoneyTransfer />,
+    tag: "Pagamenti garantiti",
+    desc: "I nostri clienti pagano prima di entrare nella struttura."
   },
   {
-    icon: <FcMindMap />,
+    icon: <FcKey />,
+    tag: "Sicurezza della permanenza",
+    desc: "Sappiamo sempre quando un ospite arriva e quando riparte."
+  },
+  {
+    icon: <FcHome />,
     tag: "Flessibilità",
-    desc: "Possibilità di visionare l’appartamento con il dovuto preavviso."
+    desc: "Puoi riservarti l’uso dell’appartamento quando ne hai bisogno."
   },
   {
-    icon: <FcSurvey />,
-    tag: "Assicurazione sull’immobile",
-    desc: "La certezza di non subire danni alla proprietà."
-  },
-  {
-    icon: <FcApproval />,
+    icon: <FcSearch />,
     tag: "Controllo continuo",
-    desc: "È nel nostro massimo interesse mantenere l’appartamento sempre pulito ed in perfette condizioni. Pronto ad accogliere nuovi ospiti."
+    desc: "Ogni qualvolta l’ospite lascia la struttura, questa viene controllata, riordinata e pulita."
   },
 ]
 
@@ -249,7 +250,7 @@ export default function Home() {
       {
         [
           { tag: "Servizio", title: "Rent to Rent", descStart: "La soluzione", descTag: "più sicura", descEnd: "per i proprietari", image: rtr, gridContent: RTR_ITEMS },
-          { tag: "Servizio di", title: "Gestione immobili", descStart: "Fai", descTag: "fruttare", descEnd: "il tuo appartamento", image: rtr, gridContent: PROPERTY_MANAGEMENT_ITEMS }
+          { tag: "Servizio di", title: "Gestione immobili", descStart: "Fai", descTag: "fruttare", descEnd: "il tuo appartamento", image: pm, gridContent: PROPERTY_MANAGEMENT_ITEMS }
         ].map((item, index) => {
           return <div key={index} className="w-full min-h-screen bg-gray-50 flex gap-10 flex-col items-center justify-center p-10 md:px-24">
             <div className='flex justify-center md:justify-between w-full text-center md:text-left'>
