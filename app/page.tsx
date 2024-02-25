@@ -130,7 +130,7 @@ export default function Home() {
         <Nav setIsOpen={setIsOpen} />
 
         <div className="grow w-full p-4 md:px-12 mt-4 flex gap-8 justify-center">
-          <div className="flex flex-col justify-between w-full md:w-1/2 md:max-w-3xl gap-12">
+          <div className="flex flex-col justify-center w-full md:w-1/2 md:max-w-3xl gap-48">
             <div>
               <p className="font-bold text-4xl md:text-6xl">La soluzione al tuo <span className="text-indigo-900">immobile,</span> in modo <span className="text-indigo-900">semplice</span></p>
               <p className="text-xl md:text-3xl mt-4 font-light">Con i nostri servizi ti garantiamo una rendita sicura e una massimizzazione del rendimento</p>
