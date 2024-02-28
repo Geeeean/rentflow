@@ -41,7 +41,7 @@ const Nav = ({ setIsOpen }: Props) => {
   return (
     <motion.div
       variants={hideNavItemsVariant}
-      className="relative left-0 flex w-full items-center justify-between gap-4 p-4 md:px-12 max-w-screen-2xl"
+      className="relative left-0 flex w-full items-center justify-between gap-4 p-8 md:px-12 max-w-screen-2xl"
     >
       {/* <div className="relative">
         <Image
@@ -59,7 +59,7 @@ const Nav = ({ setIsOpen }: Props) => {
           </button>
         ))}
       </div>
-      <button className="hidden text-xl bg-indigo-950 px-4 py-2 font-medium text-white hover:bg-indigo-900 md:block">
+      <button className="hidden text-xl bg-indigo-600 px-6 py-2 font-medium text-white hover:bg-indigo-500 md:block rounded-full">
         Contattaci
       </button>
 

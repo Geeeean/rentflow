@@ -19,7 +19,7 @@ const GGrid = (props: Props) => {
                     <div className="p-3 flex items-center justify-center bg-indigo-950 text-indigo-400 rounded-full w-fit">
                         <MdLogout />
                     </div>
-                    <div className="z-10 border border-white rounded-full w-fit px-2">Sicurezza della permanenza</div>
+                    <div className="z-10 border border-white rounded-full w-fit px-2">CONTROLLO PERMANENZA</div>
                     <p className="z-10 font-medium text-2xl md:text-4xl">Sappiamo sempre quando un ospite arriva e quando riparte.</p>
                 </div>
             </div>
