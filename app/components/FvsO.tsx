@@ -47,10 +47,10 @@ const FvsO = (props: Props) => {
                 CARDS_CONTENT.map((cont, index) => {
                     return <div key={index} className="z-10 bg-gray-900 shadow-lg ring-1 ring-slate-600 p-8 flex flex-col justify-start rounded-xl md:w-96">
                         <div className="p-3 flex items-center justify-center bg-indigo-950 text-indigo-400 rounded-full w-fit mb-4">
-                            <HiOutlineStatusOnline />
+                            {cont.icon}
                         </div>
-                        <p className="text-xl font-medium text-gray-50">Gestione online</p>
-                        <p className="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p className="text-xl font-medium text-gray-50">{cont.title}</p>
+                        <p className="text-gray-600">{cont.desc}</p>
 
                         <div className="flex flex-col gap-2 mt-4">
                             {cont.benefits.map((element, index) => {

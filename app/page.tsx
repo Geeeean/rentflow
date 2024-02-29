@@ -11,13 +11,9 @@ import Nav from "./components/Nav";
 import RtRGrid from "./components/RtRGrid";
 import GGrid from "./components/GGrid";
 import Hero from "./components/Hero";
+import FvsO from "./components/FvsO";
 
 import backg from "@/public/backg.svg"
-import { HiOutlineStatusOnline } from "react-icons/hi";
-import { PiHouseLineFill } from "react-icons/pi";
-import { FaCircleCheck } from "react-icons/fa6";
-import { TiLockClosed } from "react-icons/ti";
-import FvsO from "./components/FvsO";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
