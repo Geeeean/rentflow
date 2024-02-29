@@ -4,7 +4,7 @@ type Props = {}
 
 const Hero = (props: Props) => {
     return (
-        <div className="p-8 md:px-12  flex flex-col grow gap-16 justify-between">
+        <div className="p-8 md:px-12  flex flex-col grow gap-16 justify-between z-10">
             <div className="text-center flex flex-col items-center">
                 <p className="text-5xl md:text-7xl font-black">Rent Flow</p>
                 <p className="text-2xl md:w-1/2 mt-4 md:mt-6">Vuoi una rendita sicura e
@@ -19,7 +19,7 @@ const Hero = (props: Props) => {
             <div>
                 <p className="text-2xl font-medium mb-4 md:mb-8">I nostri Servizi</p>
                 <div className="flex flex-col md:flex-row gap-4 text-indigo-950 select-none">
-                    <div className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all">
+                    <div className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50">
                         <p className="text-sm">SERVIZIO</p>
                         <p className="text-2xl mt-2">Gestione online</p>
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto earum maiores est.</p>
@@ -39,7 +39,7 @@ const Hero = (props: Props) => {
                         </button>
                     </div>
 
-                    <div className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all">
+                    <div className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50">
                         <p className="text-sm">SERVIZIO</p>
                         <p className="text-2xl mt-2">Gestione Fisica</p>
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto earum maiores est.</p>

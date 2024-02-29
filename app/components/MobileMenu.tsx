@@ -27,7 +27,7 @@ type Props = {
   setIsOpen: ((val: boolean | ((val: boolean) => boolean)) => void);
 };
 
-export const MobileMenu = ({ setIsOpen }: Props) => {
+const MobileMenu = ({ setIsOpen }: Props) => {
   return (
     <motion.nav
     className={`index absolute left-0 z-10 h-screen w-screen bg-gray-900 p-4 font-mono text-gray-50 md:hidden`}
@@ -46,3 +46,5 @@ export const MobileMenu = ({ setIsOpen }: Props) => {
     </motion.nav>
   );
 };
+
+export default MobileMenu

@@ -2,27 +2,34 @@
 
 import "./global.css";
 
-import { FaArrowRight } from "react-icons/fa"
-
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MobileMenu } from "./components/MobileMenu";
-import Nav from "./components/Nav";
+import Image from "next/image";
 
+import MobileMenu from "./components/MobileMenu";
+import Nav from "./components/Nav";
 import RtRGrid from "./components/RtRGrid";
 import GGrid from "./components/GGrid";
 import Hero from "./components/Hero";
+
+import backg from "@/public/backg.svg"
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <main className={`font-sans bg-gray-50${isOpen ? "h-screen overflow-hidden" : ""}`}>
-      <div className="md:h-screen flex flex-col">
-        
+      <div className="md:h-screen flex flex-col relative 
+      // bg-gradient-to-r from-gray-50 to-violet-100
+      ">
+        {/* background */}
+        <div className="absolute h-full w-full top-0 left-0 rotate-180 z-0">
+          <Image src={backg} fill alt="" />
+        </div>
+
         {/* Navbar */}
         <motion.div
-          className="w-full flex justify-center"
+          className="w-full flex justify-center relative z-10"
           animate={isOpen ? "open" : "closed"}
         >
           <MobileMenu setIsOpen={setIsOpen} />
