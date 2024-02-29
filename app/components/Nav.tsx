@@ -10,6 +10,9 @@ const NAV_ITEMS = [
   },
   {
     navTitle: "Dicono di noi",
+  },
+  {
+    navTitle: "FAQs",
   }
 ];
 
