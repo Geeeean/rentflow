@@ -41,7 +41,7 @@ const Nav = ({ setIsOpen }: Props) => {
   return (
     <motion.div
       variants={hideNavItemsVariant}
-      className="relative left-0 flex w-full items-center justify-between gap-4 p-8 md:px-12 max-w-screen-2xl"
+      className="flex w-full items-center justify-between gap-4 p-8 md:px-12 max-w-screen-2xl relative"
     >
       {/* <div className="relative">
         <Image
