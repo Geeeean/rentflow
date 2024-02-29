@@ -1,7 +1,19 @@
+import { motion } from "framer-motion"
+
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 
 type Props = {}
+
+const fadeIn = {
+    initial: { y: -20 },
+    animate: { y: 0 }
+}
+
+const transitionProperties = {
+    ease: "anticipate",
+    duration: 0.2,
+}
 
 const Hero = (props: Props) => {
     return (
@@ -18,10 +30,15 @@ const Hero = (props: Props) => {
             </div>
 
             <div>
-                <p className="text-2xl font-medium mb-4 md:mb-8">I nostri Servizi</p>
+                <motion.p className="text-2xl font-medium mb-4 md:mb-8"
+                    {...fadeIn}
+                    transition={{ ...transitionProperties }}
+                >I nostri Servizi</motion.p>
                 <div className="flex flex-col md:flex-row gap-4 text-indigo-950 select-none">
-                    <div
+                    <motion.div
                         className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
+                        {...fadeIn}
+                        transition={{ ...transitionProperties }}
                     >
                         <p className="text-sm">SERVIZIO</p>
                         <p className="text-2xl mt-2">Gestione online</p>
@@ -30,10 +47,13 @@ const Hero = (props: Props) => {
                             <span>Scopri di più</span>
                             <FaArrowRightLong />
                         </Link>
-                    </div>
+                    </motion.div>
 
-                    <div
+                    <motion.div
                         className="gZrow bg-indigo-600 p-6 rounded-2xl shadow-md text-gray-50 hover:translate-y-[-0.5rem] transition-all"
+                        {...fadeIn}
+                        transition={{ ...transitionProperties, delay: 0.1 }}
+
                     >
                         <p className="text-sm font-light">SERVIZIO COMPLETO</p>
                         <p className="text-3xl mt-2 mb-1 font-medium">Rent to Rent</p>
@@ -42,10 +62,12 @@ const Hero = (props: Props) => {
                             <span>Scopri di più</span>
                             <FaArrowRightLong />
                         </Link>
-                    </div>
+                    </motion.div>
 
-                    <div
+                    <motion.div
                         className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
+                        {...fadeIn}
+                        transition={{ ...transitionProperties, delay: 0.2 }}
                     >
                         <p className="text-sm">SERVIZIO</p>
                         <p className="text-2xl mt-2">Gestione Fisica</p>
@@ -54,10 +76,10 @@ const Hero = (props: Props) => {
                             <span>Scopri di più</span>
                             <FaArrowRightLong />
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

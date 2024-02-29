@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 import { FaCircleCheck } from 'react-icons/fa6'
 import { HiOutlineStatusOnline } from 'react-icons/hi'
 import { PiHouseLineFill } from 'react-icons/pi'
@@ -45,7 +47,19 @@ const FvsO = (props: Props) => {
         <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center w-full">
             {
                 CARDS_CONTENT.map((cont, index) => {
-                    return <div key={index} className="z-10 bg-gray-900 shadow-lg ring-1 ring-slate-600 p-8 flex flex-col justify-start rounded-xl md:w-96">
+                    return <motion.div key={index} className="z-10 bg-gray-900 shadow-lg ring-1 ring-slate-600 p-8 flex flex-col justify-start rounded-xl md:w-96"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{
+                            ease: "anticipate",
+                            duration: 0.75
+                        }}
+                        variants={{
+                            visible: { y: 0, opacity: 1 },
+                            hidden: { y: 20, opacity: 0 }
+                        }}
+                    >
                         <div className="p-3 flex items-center justify-center bg-indigo-950 text-indigo-400 rounded-full w-fit mb-4">
                             {cont.icon}
                         </div>
@@ -60,7 +74,7 @@ const FvsO = (props: Props) => {
                                 </div>
                             })}
                         </div>
-                    </div>
+                    </motion.div>
                 })
             }
 
