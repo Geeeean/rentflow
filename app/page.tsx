@@ -30,7 +30,7 @@ export default function Home() {
 
         {/* Navbar */}
         <motion.div
-          className="w-full flex justify-center relative z-10"
+          className="w-full flex justify-center relative z-20"
           animate={isOpen ? "open" : "closed"}
         >
           <MobileMenu setIsOpen={setIsOpen} />

@@ -42,7 +42,7 @@ type Props = {
 
 const Nav = ({ setIsOpen }: Props) => {
   return (
-    <motion.div
+    <motion.nav
       variants={hideNavItemsVariant}
       className="flex w-full items-center justify-between gap-4 p-8 md:px-12 max-w-screen-2xl relative"
     >
@@ -71,7 +71,7 @@ const Nav = ({ setIsOpen }: Props) => {
         size={24}
         className="md:hidden"
       />
-    </motion.div>
+    </motion.nav>
   )
 }
 

@@ -30,7 +30,7 @@ type Props = {
 const MobileMenu = ({ setIsOpen }: Props) => {
   return (
     <motion.nav
-    className={`index absolute left-0 z-10 h-screen w-screen bg-gray-900 p-4 font-mono text-gray-50 md:hidden`}
+    className={`index absolute left-0 h-screen w-screen bg-gray-950/50 backdrop-blur-2xl p-4 font-mono text-gray-50 md:hidden`}
     initial={MobileMenuRefVariant.closed}
       variants={MobileMenuRefVariant}
     >
