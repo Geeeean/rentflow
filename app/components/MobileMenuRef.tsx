@@ -1,19 +1,8 @@
 import { motion } from "framer-motion";
-
-const MOBILE_NAV_ITEMS = [
-  {
-    navTitle: "Servizi",
-  },
-  {
-    navTitle: "Offerte",
-  },
-  {
-    navTitle: "Dicono di noi",
-  },
-  {
-    navTitle: "Contatti",
-  },
-];
+import { NAV_ITEMS } from "./Nav";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { MouseEvent } from "react";
 
 const liVariant = {
   open: {
@@ -49,17 +38,40 @@ const ulVariant = {
   },
 };
 
-export const MobileMenuRef = () => {
+type Props = {
+  setIsOpen: (val: boolean) => void
+}
+
+export const MobileMenuRef = ({ setIsOpen }: Props) => {
+  const router = useRouter();
+
+  const handleClick = (href: string) => {
+    setIsOpen(false);
+    
+    setTimeout(() => {
+      router.push(href);
+    }, 700);
+  }
+
   return (
     <motion.ul variants={ulVariant} className="mt-10 list-none">
-      {MOBILE_NAV_ITEMS.map((navItem, index) => (
+      {[...NAV_ITEMS, {
+        navTitle: "Contatti",
+        href: "#contacts"
+      }].map((navItem, index) => (
         <motion.li
           whileTap={{ scale: 0.95 }}
           key={index}
           className="m-5 select-none overflow-y-hidden"
         >
-          <motion.div variants={liVariant} className="text-center text-4xl">
+          <motion.div variants={liVariant} className="text-center text-4xl" onClick={(e) => {
+            // setIsOpen(false)
+            e.preventDefault();
+            handleClick(navItem.href)
+
+          }}>
             {navItem.navTitle}
+            {/* <Link href={navItem.href}>{navItem.navTitle}</Link> */}
           </motion.div>
         </motion.li>
       ))}

@@ -3,16 +3,20 @@ import { motion } from "framer-motion"
 import { IoMdMenu } from "react-icons/io"
 
 import logo from "@/public/logo.svg";
+import Link from "next/link";
 
-const NAV_ITEMS = [
+export const NAV_ITEMS = [
   {
     navTitle: "Servizi",
+    href: "#"
   },
   {
     navTitle: "Dicono di noi",
+    href: "#"
   },
   {
     navTitle: "FAQs",
+    href: "#faqs"
   }
 ];
 
@@ -57,9 +61,9 @@ const Nav = ({ setIsOpen }: Props) => {
       <button className="font-black text-xl">RENTFLOW</button>
       <div className="hidden items-center gap-12 font-sans text-lg font-medium md:flex ">
         {NAV_ITEMS.map((navItem, index) => (
-          <button className="hover:text-black" key={index}>
+          <Link href={navItem.href} className="hover:text-black" key={index}>
             {navItem.navTitle}
-          </button>
+          </Link>
         ))}
       </div>
       <button className="hidden text-xl bg-indigo-600 px-6 py-2 font-medium text-white hover:bg-indigo-500 md:block rounded-full">

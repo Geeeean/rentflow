@@ -41,7 +41,7 @@ const MobileMenu = ({ setIsOpen }: Props) => {
         />
       </div>
 
-      <MobileMenuRef />
+      <MobileMenuRef setIsOpen={setIsOpen}/>
       <MobileMenuContacts />
     </motion.nav>
   );
