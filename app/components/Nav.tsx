@@ -66,9 +66,9 @@ const Nav = ({ setIsOpen }: Props) => {
           </Link>
         ))}
       </div>
-      <button className="hidden text-xl bg-indigo-600 px-6 py-2 font-medium text-white hover:bg-indigo-500 md:block rounded-full">
+      <Link href="#contacts" className="hidden text-xl bg-indigo-600 px-6 py-2 font-medium text-white hover:bg-indigo-500 md:block rounded-full">
         Contattaci
-      </button>
+      </Link>
 
       <IoMdMenu
         onClick={() => setIsOpen((isOpen) => !isOpen)}
