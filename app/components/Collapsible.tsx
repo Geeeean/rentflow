@@ -6,13 +6,13 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 type Props = {
     title: string,
-    desc: string
+    desc: string | React.JSX.Element
 }
 
 const collapsibleVariants = {
     open: {
         height: "auto",
-        marginTop: "2rem"
+        marginTop: "1rem"
     },
     closed: {
         height: 0,
@@ -27,13 +27,15 @@ const Collapsible = ({ title, desc }: Props) => {
         <div className='text-lg p-4 w-full first:border-t border-b border-white/30 cursor-pointer' onClick={() => {
             setOpen(prec => !prec)
         }}>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-start gap-2">
                 <span>{title}</span>
-                {open ? <FaAngleUp /> : <FaAngleDown />}
+                <div className="mt-1">
+                    {open ? <FaAngleUp /> : <FaAngleDown />}
+                </div>
             </div>
-            <motion.p className="overflow-hidden" variants={collapsibleVariants} initial="closed" animate={open ? "open" : "closed"}>
+            <motion.div className="overflow-hidden" variants={collapsibleVariants} initial="closed" animate={open ? "open" : "closed"}>
                 {desc}
-            </motion.p>
+            </motion.div>
         </div>
     )
 }
