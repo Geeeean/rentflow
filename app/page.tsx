@@ -17,6 +17,7 @@ import Hero from "./components/Hero";
 import FvsO from "./components/FvsO";
 import ContactCard from "./components/ContactCard";
 import Collapsible from "./components/Collapsible";
+import { BackgroundGradientAnimation } from "./components/BackgroundGradientAnimation";
 
 import backg from "@/public/backg.svg"
 
@@ -25,13 +26,13 @@ export default function Home() {
 
   return (
     <main className={`font-sans bg-gray-50 ${isOpen ? "h-screen overflow-hidden" : ""}`}>
-      <div className="md:h-screen flex flex-col relative 
-      // bg-gradient-to-r from-gray-50 to-violet-100
-      ">
+      <div className="md:min-h-screen flex flex-col relative">
+        
         {/* background */}
-        <div className="absolute h-full w-full top-0 left-0 rotate-180 z-0">
-          <Image src={backg} fill alt="" />
+        <div className="absolute h-full w-full top-0 left-0 z-0">
+          <BackgroundGradientAnimation />
         </div>
+        {/* <Image src={backg} fill alt="" /> */}
 
         {/* Navbar */}
         <motion.div
