@@ -10,10 +10,10 @@ export const NAV_ITEMS = [
     navTitle: "Servizi",
     href: "#"
   },
-  {
-    navTitle: "Dicono di noi",
-    href: "#"
-  },
+  // {
+  //   navTitle: "Dicono di noi",
+  //   href: "#"
+  // },
   {
     navTitle: "FAQs",
     href: "#faqs"
