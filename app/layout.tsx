@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.className}>
+      <SpeedInsights/>
       <body>{children}</body>
     </html>
   );
