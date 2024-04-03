@@ -34,15 +34,17 @@ const Hero = (props: Props) => {
                     {...fadeIn}
                     transition={{ ...transitionProperties }}
                 >I nostri Servizi</motion.p>
-                <div className="flex flex-col md:flex-row gap-4 text-indigo-950 select-none">
+                <div className="flex flex-col md:grid md:grid-cols-3 gap-4 text-indigo-950 select-none">
                     <motion.div
-                        className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
+                        className="flex flex-col justify-between ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
                         {...fadeIn}
                         transition={{ ...transitionProperties }}
                     >
-                        <p className="text-sm">SERVIZIO</p>
-                        <p className="text-2xl mt-2">Gestione online</p>
-                        <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto earum maiores est.</p>
+                        <div>
+                            <p className="text-sm">SERVIZIO</p>
+                            <p className="text-2xl mt-2">Gestione online</p>
+                            <p className="mb-5">Scopri come far fruttare al massimo il tuo annuncio tramite delle strategie di prezzo mirate, ed altro ancora…</p>
+                        </div>
                         <Link href="#gi" className="hover:gap-4 transition-all flex items-center gap-2">
                             <span>Scopri di più</span>
                             <FaArrowRightLong />
@@ -50,14 +52,16 @@ const Hero = (props: Props) => {
                     </motion.div>
 
                     <motion.div
-                        className="gZrow bg-indigo-600 p-6 rounded-2xl shadow-md text-gray-50 hover:translate-y-[-0.5rem] transition-all"
+                        className="flex flex-col justify-between bg-indigo-600 p-6 rounded-2xl shadow-md text-gray-50 hover:translate-y-[-0.5rem] transition-all"
                         {...fadeIn}
                         transition={{ ...transitionProperties, delay: 0.1 }}
 
                     >
-                        <p className="text-sm font-light">SERVIZIO COMPLETO</p>
-                        <p className="text-3xl mt-2 mb-1 font-medium">Rent to Rent</p>
-                        <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto earum maiores est.</p>
+                        <div>
+                            <p className="text-sm font-light">SERVIZIO COMPLETO</p>
+                            <p className="text-3xl mt-2 mb-1 font-medium">Rent to Rent</p>
+                            <p className="mb-5">Affittare il tuo immobile non è mai stato così semplice e sicuro.</p>
+                        </div>
                         <Link href="#rtr" className="hover:gap-4 transition-all flex items-center gap-2">
                             <span>Scopri di più</span>
                             <FaArrowRightLong />
@@ -65,13 +69,15 @@ const Hero = (props: Props) => {
                     </motion.div>
 
                     <motion.div
-                        className="grow ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
+                        className="flex flex-col justify-between ring-1 ring-gray-300 p-6 rounded-2xl shadow-md hover:translate-y-[-0.5rem] transition-all bg-gray-50"
                         {...fadeIn}
                         transition={{ ...transitionProperties, delay: 0.2 }}
                     >
-                        <p className="text-sm">SERVIZIO</p>
-                        <p className="text-2xl mt-2">Gestione Fisica</p>
-                        <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto earum maiores est.</p>
+                        <div>
+                            <p className="text-sm">SERVIZIO</p>
+                            <p className="text-2xl mt-2">Gestione Fisica</p>
+                            <p className="mb-5">Ci offriamo come partner nella gestione del tuo appartamento a 360°</p>
+                        </div>
                         <Link href="#gi" className="hover:gap-4 transition-all flex items-center gap-2">
                             <span>Scopri di più</span>
                             <FaArrowRightLong />

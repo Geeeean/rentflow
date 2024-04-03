@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { NAV_ITEMS } from "./Nav";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { MouseEvent } from "react";
 
 const liVariant = {
   open: {

@@ -124,7 +124,9 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <footer>
 
+      </footer>
     </main>
   );
 }
