@@ -9,7 +9,7 @@ const CARDS_CONTENT = [
     {
         icon: <HiOutlineStatusOnline />,
         title: "Gestione online",
-        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        desc: "Ti aiutiamo ad ottenere il massimo da tutto il mondo digitale.",
         benefits: [
             { provided: true, desc: "Nuova descrizione" },
             { provided: true, desc: "Nuove foto" },
@@ -25,7 +25,7 @@ const CARDS_CONTENT = [
     {
         icon: <PiHouseLineFill />,
         title: "Gestione fisica",
-        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        desc: "Ci occupiamo a 360 gradi della tua casa.",
         benefits: [
             { provided: true, desc: "Nuova descrizione" },
             { provided: true, desc: "Nuove foto" },
