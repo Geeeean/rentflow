@@ -25,7 +25,7 @@ const CARDS_CONTENT = [
     {
         icon: <PiHouseLineFill />,
         title: "Gestione fisica",
-        desc: "Ci occupiamo a 360 gradi della tua casa.",
+        desc: "Ci occupiamo a 360 gradi del tuo immobile.",
         benefits: [
             { provided: true, desc: "Nuova descrizione" },
             { provided: true, desc: "Nuove foto" },
