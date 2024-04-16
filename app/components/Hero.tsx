@@ -18,7 +18,7 @@ const transitionProperties = {
 
 const Hero = (props: Props) => {
     return (
-        <div className="p-8 md:px-12  flex flex-col grow gap-16 justify-between z-10 ">
+        <div className="p-8 md:px-12  flex flex-col grow gap-12 justify-between z-10 ">
             <div className="text-center flex flex-col items-center lg:mt-12">
                 <p className="text-5xl md:text-7xl font-black">Rent Flow</p>
                 <p className="text-2xl md:w-1/2 mt-4 md:mt-6">Vuoi una rendita sicura e
@@ -30,7 +30,7 @@ const Hero = (props: Props) => {
                 </Link>
             </div>
 
-            <div>
+            <div id="services" className="pt-4">
                 <motion.p className="text-2xl font-medium mb-4 md:mb-8"
                     {...fadeIn}
                     transition={{ ...transitionProperties }}

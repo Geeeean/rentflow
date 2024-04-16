@@ -26,23 +26,25 @@ const ContactCard = ({ title, content, icon }: Props) => {
 
     return (
         <div className="z-10 flex flex-col justify-start">
-            <p className="text-lg font-medium">{title}</p>
-            <div className="flex gap-4 mt-2 py-1 px-2 rounded-full items-center justify-between ring-1 ring-slate-600 bg-black/10">
-                <div className="flex items-center gap-2">
-                    <div className="p-2">
-                        {icon}
+            <div className="text-lg font-medium flex items-center gap-2">
+                <div className='flex gap-2 items-center'>
+                    <div className="flex items-center justify-center text-indigo-400 rounded-2xl w-fit"
+                        onClick={() => {
+                            navigator.clipboard.writeText(content)
+                            setIsPressed(true)
+                        }}
+                    >
+                        {isPressed ? <BiCheck /> : <BiCopy />}
                     </div>
-                    <span>{content}</span>
-                </div>
-                <div className="p-2 px-4 flex items-center justify-center bg-indigo-950 text-indigo-400 rounded-2xl w-fit info@rentflow.it"
-                    onClick={() => {
-                        navigator.clipboard.writeText(content)
-                        setIsPressed(true)
-                    }}
-                >
-                    {isPressed ? <BiCheck /> : <BiCopy />}
+                    {/* {icon} */}
+                    {title}
                 </div>
             </div>
+
+            <div className="flex items-center gap-2 grow break-words">
+                <p className='break-words grow break-all'>{content}</p>
+            </div>
+
         </div>
     )
 }

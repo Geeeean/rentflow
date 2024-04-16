@@ -1,10 +1,10 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "RentFlow",
   description: "Rendimento sicuro",
+  icons: "/favicon.ico"
 };
 
 const inter = Inter({
@@ -19,7 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.className}>
-      <SpeedInsights/>
       <body>{children}</body>
     </html>
   );

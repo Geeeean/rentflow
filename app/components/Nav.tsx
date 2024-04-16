@@ -8,7 +8,7 @@ import Link from "next/link";
 export const NAV_ITEMS = [
   {
     navTitle: "Servizi",
-    href: "#"
+    href: "#services"
   },
   // {
   //   navTitle: "Dicono di noi",
