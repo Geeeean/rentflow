@@ -91,7 +91,7 @@ export default function Home() {
                       Assicurazione di responsabilità civile fino a 1.000.000 USD (protezione nel raro caso in cui un ospite si faccia male o i suoi effetti personali vengano danneggiati o rubati)
                     </li>
                   </ul>
-                  <p className="mt-2">Inoltre se il proprietario crede che queste non siano abbastanza (ma possiamo confermare che per quella che è stata la nostra esperienza, questa copertura è sufficiente), vi è la possibilità di realizzare una ulteriore polizza a copertura dell’alloggio. Cerchiamo sempre di venire in contro al proprietario perché crediamo in ciò che offriamo, ma soprattutto, crediamo fermamente che il proprietario possa trarre beneficio scegliendo questa soluzione, sia in termini economici, ma soprattutto, in termini di sicurezza (per quanto riguarda l’immobile e soprattutto i pagamenti)</p>
+                  <p className="mt-2">Inoltre qualora il proprietario non si senta abbastanza al sicuro, provvederemo a istituire un’ulteriore polizza assicurativa a suo favore, poiché è nel nostro massimo interesse garantire sicurezza e stabilità.</p>
                 </>
               },
               { title: "Cambiando sempre ospiti non c’è il rischio che l’appartamento si rovini prima rispetto ad un affitto tradizionale?", desc: "Assolutamente no, anzi tutto il contrario. Proprio perché è nel nostro interesse mantenerlo pulito e perfetto, pronto ad ospitare nuovi clienti; inoltre, per lo stesso motivo, nel malaugurato caso in cui vengano recati danni all’interno dell’ alloggio, la prima cosa alla quale penseremo noi sarà porvi rimedio. Niente a che vedere con un affitto tradizionale." }
