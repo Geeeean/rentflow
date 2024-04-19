@@ -82,7 +82,7 @@ const RtRGrid = (props: Props) => {
                         <FaMoneyBill />
                     </div>
                     <div className="z-10 border border-black rounded-full w-fit px-2">NIENTE MOROSITÀ</div>
-                    <p className="z-10 font-medium text-2xl md:text-4xl">Garanzia di ricevere regolarmente il pagamento dell’affitto, a differenza di ciò che potrebbe capitare con gli affitti tradizionali.</p>
+                    <p className="z-10 font-medium text-2xl md:text-4xl">Garanzia di ricevere regolarmente il pagamento dell’affitto, a differenza di ciò che potrebbe accadere con gli affitti tradizionali.</p>
                 </motion.div>
             </div>
         </div>
