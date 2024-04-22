@@ -1,52 +1,39 @@
 "use client";
 
-import "./global.css";
+// import "./global.css";
+import "@/app/global.css"
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 import { PiPhone } from "react-icons/pi";
 
-import MobileMenu from "./components/MobileMenu";
-import Nav from "./components/Nav";
-import RtRGrid from "./components/RtRGrid";
-import GGrid from "./components/GGrid";
-import Hero from "./components/Hero";
-import FvsO from "./components/FvsO";
-import ContactCard from "./components/ContactCard";
-import Collapsible from "./components/Collapsible";
-import { BackgroundGradientAnimation } from "./components/BackgroundGradientAnimation";
-
-import backg from "@/public/backg.svg"
+import NavWrapper from "./components/NavWrapper";
+import RtRGrid from "@/app/components/RtRGrid";
+import GGrid from "@/app/components/GGrid";
+import Hero from "@/app/components/Hero";
+import FvsO from "@/app/components/FvsO";
+import ContactCard from "@/app/components/ContactCard";
+import Collapsible from "@/app/components/Collapsible";
+import { BackgroundGradientAnimation } from "@/app/components/BackgroundGradientAnimation";
+import { WrapperContext } from "./components/Wrapper";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useContext(WrapperContext)
 
   return (
     <main className={`font-sans bg-gray-50 ${isOpen ? "h-screen overflow-hidden" : ""}`}>
-      <div className="md:min-h-screen flex flex-col relative">
-        
+      <section className="md:min-h-screen flex flex-col relative pt-20">
         {/* background */}
         <div className="absolute h-full w-full top-0 left-0 z-0">
           <BackgroundGradientAnimation />
         </div>
-        {/* <Image src={backg} fill alt="" /> */}
-
-        {/* Navbar */}
-        <motion.div
-          className="w-full flex justify-center relative z-20"
-          animate={isOpen ? "open" : "closed"}
-        >
-          <MobileMenu setIsOpen={setIsOpen} />
-
-          <Nav setIsOpen={setIsOpen} />
-        </motion.div>
 
         {/* section 1: hero section (servizi) */}
         <Hero />
-      </div>
+      </section>
 
       {/* section 2: servizio rent to rent */}
       <section className="p-8 md:px-12  overflow-hidden" id="rtr">

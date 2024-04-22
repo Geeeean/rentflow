@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
+import Wrapper from './components/Wrapper';
+import NavWrapper from './components/NavWrapper';
 
 export const metadata: Metadata = {
   title: "RentFlow",
@@ -19,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.className}>
-      <body>{children}</body>
+      <body>
+        <Wrapper>
+          <NavWrapper />
+          {children}
+        </Wrapper>
+      </body>
     </html>
   );
 }

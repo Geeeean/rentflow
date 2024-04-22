@@ -48,16 +48,8 @@ const Nav = ({ setIsOpen }: Props) => {
   return (
     <motion.nav
       variants={hideNavItemsVariant}
-      className="flex w-full items-center justify-between gap-4 p-8 md:px-12 max-w-screen-2xl relative"
+      className="flex w-full items-center justify-between gap-4 h-20 px-8 md:px-12 max-w-screen-2xl absolute top-0"
     >
-      {/* <div className="relative">
-        <Image
-          src={logo}
-          alt="logo"
-          layout="responsive"
-          objectFit="containt"
-        />
-      </div> */}
       <button className="font-black text-xl">RENTFLOW</button>
       <div className="hidden items-center gap-12 font-sans text-lg font-medium md:flex ">
         {NAV_ITEMS.map((navItem, index) => (
