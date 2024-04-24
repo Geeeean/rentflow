@@ -11,6 +11,10 @@ export const NAV_ITEMS = [
     href: "/#services"
   },
   {
+    navTitle: "FAQs",
+    href: "/#faqs"
+  },
+  {
     navTitle: "Chi siamo",
     href: "/about-us"
   },
@@ -18,10 +22,6 @@ export const NAV_ITEMS = [
     navTitle: "Lavora con noi",
     href: "/to-agency"
   },
-  {
-    navTitle: "FAQs",
-    href: "/#faqs"
-  }
 ];
 
 const hideNavItemsVariant = {
