@@ -1,8 +1,5 @@
 "use client";
 
-// import "./global.css";
-import "@/app/global.css"
-
 import { useContext, useState } from "react";
 import Image from "next/image";
 
@@ -91,7 +88,7 @@ export default function Home() {
 
       {/* todo: recensioni */}
 
-      <section className="p-8 md:px-12  overflow-hidden bg-slate-900 text-gray-50 flex flex-col items-center" id="contacts">
+      {/* <section className="p-8 md:px-12  overflow-hidden bg-slate-900 text-gray-50 flex flex-col items-center" id="contacts">
         <p className="font-bold text-4xl md:text-6xl text-center">Contattaci</p>
         <motion.div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-8 justify-center ring-1 ring-slate-600 bg-black/10 rounded-xl p-6 md:p-8 w-full md:w-fit text-sm md:text-md"
           initial="hidden"
@@ -110,11 +107,7 @@ export default function Home() {
           <div className="md:w-[1px] md:h-20 hidden bg-slate-500"></div>
           <ContactCard title="Email" content="petrellistracciaacquisizioni@gmail.com" icon={<MdEmail size={22} />} />
         </motion.div>
-      </section>
-
-      <footer>
-
-      </footer>
+      </section> */}
     </main>
   );
 }

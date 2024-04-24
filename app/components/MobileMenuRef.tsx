@@ -45,7 +45,7 @@ export const MobileMenuRef = ({ setIsOpen }: Props) => {
 
   const handleClick = (href: string) => {
     setIsOpen(false);
-    
+
     setTimeout(() => {
       router.push(href);
     }, 700);
@@ -57,21 +57,24 @@ export const MobileMenuRef = ({ setIsOpen }: Props) => {
         navTitle: "Contatti",
         href: "#contacts"
       }].map((navItem, index) => (
-        <motion.li
-          whileTap={{ scale: 0.95 }}
-          key={index}
-          className="m-5 select-none overflow-y-hidden"
-        >
-          <motion.div variants={liVariant} className="text-center text-4xl" onClick={(e) => {
-            // setIsOpen(false)
-            e.preventDefault();
-            handleClick(navItem.href)
+        <>
+          <motion.li
+            whileTap={{ scale: 0.95 }}
+            key={index}
+            className="m-5 select-none overflow-y-hidden"
+          >
+            <motion.div variants={liVariant} className="text-center text-3xl" onClick={(e) => {
+              // setIsOpen(false)
+              e.preventDefault();
+              handleClick(navItem.href)
 
-          }}>
-            {navItem.navTitle}
-            {/* <Link href={navItem.href}>{navItem.navTitle}</Link> */}
-          </motion.div>
-        </motion.li>
+            }}>
+              {navItem.navTitle}
+              {/* <Link href={navItem.href}>{navItem.navTitle}</Link> */}
+            </motion.div>
+          </motion.li>
+        </>
+
       ))}
     </motion.ul>
   );

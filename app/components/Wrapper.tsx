@@ -1,5 +1,6 @@
 "use client"
 
+import "@/app/global.css"
 import { createContext, useContext, useState } from 'react';
 
 export const WrapperContext = createContext({ isOpen: false, setIsOpen: (val: boolean | ((val: boolean) => boolean)) => { } })

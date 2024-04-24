@@ -8,15 +8,19 @@ import Link from "next/link";
 export const NAV_ITEMS = [
   {
     navTitle: "Servizi",
-    href: "#services"
+    href: "/#services"
   },
-  // {
-  //   navTitle: "Dicono di noi",
-  //   href: "#"
-  // },
+  {
+    navTitle: "Chi siamo",
+    href: "/about-us"
+  },
+  {
+    navTitle: "Lavora con noi",
+    href: "/to-agency"
+  },
   {
     navTitle: "FAQs",
-    href: "#faqs"
+    href: "/#faqs"
   }
 ];
 
@@ -50,7 +54,7 @@ const Nav = ({ setIsOpen }: Props) => {
       variants={hideNavItemsVariant}
       className="flex w-full items-center justify-between gap-4 h-20 px-8 md:px-12 max-w-screen-2xl absolute top-0"
     >
-      <button className="font-black text-xl">RENTFLOW</button>
+      <Link href="/" className="font-black text-xl">RENTFLOW</Link>
       <div className="hidden items-center gap-12 font-sans text-lg font-medium md:flex ">
         {NAV_ITEMS.map((navItem, index) => (
           <Link href={navItem.href} className="hover:text-black" key={index}>

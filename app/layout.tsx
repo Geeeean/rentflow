@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 import Wrapper from './components/Wrapper';
 import NavWrapper from './components/NavWrapper';
+import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: "RentFlow",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Wrapper>
           <NavWrapper />
           {children}
+          <Footer />
         </Wrapper>
       </body>
     </html>
