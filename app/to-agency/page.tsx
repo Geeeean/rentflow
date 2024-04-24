@@ -54,11 +54,11 @@ const ToAgency = (props: Props) => {
                     </div> */}
                     <div className='flex flex-col'>
                         {/* <div className='px-3 py-1 rounded-full ring-1 ring-black w-fit font-medium mb-2'>SERVIZIO 1</div> */}
-                        <p className='text-xl font-medium'>Servizio aggiuntivo per i tuoi clienti</p>
-                        <p>
+                        <p className='text-xl font-bold z-10'>Servizio aggiuntivo per i tuoi clienti</p>
+                        <p className='text-gray-300 font-medium'>
                             Trovare soluzioni per gli
                             appartamenti sfitti o per i proprietari indecisi sul tradizionale affitto a lungo termine può essere una sfida.
-                            Noi ci occupiamo di gestire o affittare questi immobili, risolvendo il problema della vacanza prolungata dell'unità o
+                            Noi ci occupiamo di gestire o affittare questi immobili, risolvendo il problema della vacanza prolungata dell{"'"}unità o
                             il rischio di inquilini inaffidabili e morosi. Offriamo una soluzione alternativa che potrebbe soddisfare le esigenze dei tuoi
                             clienti, garantendo loro tranquillità e convenienza.
                         </p>
@@ -72,8 +72,8 @@ const ToAgency = (props: Props) => {
                     </div> */}
                     <div className='flex flex-col'>
                         {/* <div className='px-3 py-1 rounded-full ring-1 ring-black w-fit font-medium mb-2'>SERVIZIO 2</div> */}
-                        <p className='text-xl font-medium'>Opportunità di guadagno extra</p>
-                        <p>
+                        <p className='text-xl font-bold z-10'>Opportunità di guadagno extra</p>
+                        <p className='text-gray-300 font-medium'>
                             Ogni volta che prendiamo in affitto un immobile,
                             tu, come intermediario, ricevi la tua meritata commissione. Immagina di avere subito a disposizione
                             un contatto affidabile e interessato per ogni appartamento che proponi in affitto, con la possibilità
