@@ -62,7 +62,7 @@ export const MobileMenuRef = ({ setIsOpen }: Props) => {
           key={index}
           className="m-5 select-none overflow-y-hidden"
         >
-          <motion.div variants={liVariant} className="text-center text-3xl" onClick={(e) => {ƒ
+          <motion.div variants={liVariant} className="text-center text-3xl" onClick={(e) => {
             e.preventDefault();
             handleClick(navItem.href)
           }}>
