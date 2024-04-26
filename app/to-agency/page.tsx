@@ -10,7 +10,7 @@ const BENEFITS: { title: string, desc: string }[] = [
         title: "Servizio aggiuntivo per i tuoi clienti",
         desc: `Trovare soluzioni per gli
         appartamenti sfitti o per i proprietari indecisi sul tradizionale affitto a lungo termine può essere una sfida.
-        Noi ci occupiamo di gestire o affittare questi immobili, risolvendo il problema della vacanza prolungata dell{ "'"}unità o
+        Noi ci occupiamo di gestire o affittare questi immobili, risolvendo il problema della vacanza prolungata dell${"'"}unità o
         il rischio di inquilini inaffidabili e morosi.Offriamo una soluzione alternativa che potrebbe soddisfare le esigenze dei tuoi
         clienti, garantendo loro tranquillità e convenienza.`
     },
