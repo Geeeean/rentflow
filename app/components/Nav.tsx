@@ -1,8 +1,6 @@
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { IoMdMenu } from "react-icons/io"
 
-import logo from "@/public/logo.svg";
 import Link from "next/link";
 
 export const NAV_ITEMS = [
