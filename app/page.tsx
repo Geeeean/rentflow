@@ -105,7 +105,7 @@ export default function Home() {
         >
           <ContactCard title="Telefono" content="+39 334 180 5336" icon={<PiPhone size={22} />} />
           <div className="md:w-[1px] md:h-20 hidden bg-slate-500"></div>
-          <ContactCard title="Email" content="petrellistracciaacquisizioni@gmail.com" icon={<MdEmail size={22} />} />
+          <ContactCard title="Email" content="info@rentflow.it" icon={<MdEmail size={22} />} />
         </motion.div>
       </section> */}
     </main>

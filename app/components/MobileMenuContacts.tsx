@@ -17,8 +17,9 @@ export const MobileMenuContacts = () => {
       variants={fadeInVariant}
       className="mt-32 text-center font-medium"
     >
-      <p className="text-center text-xl break-words">petrellistracciaacquisizioni@gmail.com</p>
-      <p className="m-4 text-center text-xl">+39 334 180 5336</p>
+      <p className="text-center text-xl break-words">info@rentflow.it</p>
+      <p className="m-4 mb-2 text-center text-xl">+39 334 180 5336</p>
+      <p className="m-4 mt-2 text-center text-xl">+39 334 180 5336</p>
     </motion.div>
   );
 };
