@@ -43,7 +43,7 @@ const ToAgency = (props: Props) => {
                 </div>
             </section>
 
-            <section className='flex flex-col gap-8 bg-slate-900 text-gray-50 py-8'>
+            <section className='flex flex-col gap-8 bg-slate-900 text-gray-50 py-8 items-center'>
                 <div className='max-w-screen-2xl md:px-12 w-full px-8'>
                     <div className='px-3 py-1 rounded-full ring-1 ring-white text-white w-fit font-medium'>VANTAGGI</div>
                 </div>
