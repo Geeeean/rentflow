@@ -19,7 +19,7 @@ export const MobileMenuContacts = () => {
     >
       <p className="text-center text-xl break-words">info@rentflow.it</p>
       <p className="m-4 mb-2 text-center text-xl">+39 334 180 5336</p>
-      <p className="m-4 mt-2 text-center text-xl">+39 334 180 5336</p>
+      <p className="m-4 mt-2 text-center text-xl">+39 339 883 6017</p>
     </motion.div>
   );
 };
