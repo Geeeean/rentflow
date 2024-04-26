@@ -11,7 +11,7 @@ const Footer = (props: Props) => {
 
     return (
         <footer className={`w-full ${isOpen && "hidden"} p-8 md:px-12 flex flex-col items-center gap-4 bg-slate-950/95 text-gray-50`} id="contacts">
-            <Link href="/" className="font-black text-5xl">RENTFLOW</Link>
+            <Link href="/" className="font-black text-5xl mr-auto">RENTFLOW</Link>
             <div className="w-full">
                 <div className="border-b border-white/30 flex justify-between w-full py-4">
                     <span>Telefono</span>
