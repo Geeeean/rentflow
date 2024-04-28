@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 import Head from 'next/head';
+import Script from 'next/script';
 
 import Wrapper from './components/Wrapper';
 import NavWrapper from './components/NavWrapper';
@@ -24,9 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.className}>
-      <Head>
-        <script defer data-domain="rentflow.it" src="https://plausible.io/js/script.js"></script>
-      </Head>
       <body>
         <Wrapper>
           <NavWrapper />
