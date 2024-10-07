@@ -1,6 +1,6 @@
 # Rentflow - Landing Page
 
-The **Rentflow** landing page is designed to present a modern and engaging platform for showcasing Rentflow's property management services. Built with a focus on performance and user experience, the site effectively communicates the differences between Rentflow's **Online Management** and **Physical Management** service packages.
+The **Rentflow** landing page is designed to present a modern and engaging platform for showcasing Rentflow's property management services.
 
 ## About Rentflow
 
