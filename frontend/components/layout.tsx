@@ -6,7 +6,7 @@ const Layout = ({
     children: React.ReactNode;
 }>) => {
     return (
-        <main className="bg-stone-50/50 h-screen">
+        <main className="bg-stone-50/50 h-screen px-10">
             <Nav />
             {children}
         </main>

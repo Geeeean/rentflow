@@ -1,5 +1,5 @@
 const Nav = () => {
-    return <div className="flex justify-between p-6">
+    return <div className="flex justify-between py-6">
         <div>rentflow</div>
         <div className="flex gap-8 items-center">
             <p className="h-fit">Servizi</p>
