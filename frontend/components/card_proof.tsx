@@ -8,10 +8,20 @@ type Props = {
     title: string,
 }
 
-const CardProof = ({ text }: Props) => {
+const CardProof = ({ text, name, job, title }: Props) => {
     return <div className="p-10 flex flex-col items-start bg-white gap-6 rounded-md border shadow">
-        <Quote size={24} />
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset shee</p>
+        <Quote size={36} />
+        <p className="italic text-gray-500">"{text}"</p>
+
+        <div className="w-full bg-gray-200 h-px" />
+
+        <div className="flex gap-2 items-center">
+            <div className="rounded-full p-4 bg-gray-200 font-bold">{title}</div>
+            <div className="text-left">
+                <p className="font-semibold">{name}</p>
+                <p className="text-sm text-gray-500">{job}</p>
+            </div>
+        </div>
     </div>
 }
 

@@ -2,10 +2,11 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ArrowRightFromLine, CircleCheck, Key, Shield } from "lucide-react";
+import { ArrowRight, ArrowRightFromLine, CircleCheck, Key, Shield, TrendingUp } from "lucide-react";
 import Badge from "@/components/badge";
 import TimelineCard from "@/components/timeline_card";
 import { Card1 } from "@/components/card1";
+import { CardProof } from "@/components/card_proof";
 
 export default function Home() {
     return (
@@ -112,7 +113,7 @@ export default function Home() {
                     <p className="text-7xl font-serif italic">Perché affidarsi a noi</p>
                     <p className="text-gray-500 text-xl">Proteggiamo il tuo investimento riducendo i rischi e massimizzando il rendimento, con trasparenza e risultati misurabili.</p>
                 </div>
-                <div className="flex justify-between gap-6 ">
+                <div className="flex justify-between gap-6">
                     <div className="p-10 flex flex-col flex-1 bg-gray-100 gap-6 rounded-md border shadow">
                         <div className="p-3 bg-white rounded-full w-fit border shadow">
                             <Shield />
@@ -205,8 +206,69 @@ export default function Home() {
                     <p className="text-6xl font-serif">Cosa dicono i nostri clienti</p>
                 </div>
 
-                <div className="flex gap-12">
+                <div className="flex gap-6">
+                    <CardProof
+                        text="Avevo dubbi sulla sicurezza e sui pagamenti. Con Rentflow ho scoperto che con le coperture doppie ei pagamenti anticipati OTA dormo sonni tranquilli."
+                        title="SIG"
+                        name="Marco R."
+                        job="Investitore Immobiliare"
+                    />
+                    <CardProof
+                        text="Avevo dubbi sulla sicurezza e sui pagamenti. Con Rentflow ho scoperto che con le coperture doppie ei pagamenti anticipati OTA dormo sonni tranquilli."
+                        title="SIG"
+                        name="Marco R."
+                        job="Investitore Immobiliare"
+                    />
+                    <CardProof
+                        text="Avevo dubbi sulla sicurezza e sui pagamenti. Con Rentflow ho scoperto che con le coperture doppie ei pagamenti anticipati OTA dormo sonni tranquilli."
+                        title="SIG"
+                        name="Marco R."
+                        job="Investitore Immobiliare"
+                    />
+                </div>
+            </div>
 
+            <div className="px-10 flex flex-col items-center text-center gap-12 mb-56">
+                <Badge text={"VERIFICA DELLE PRESTAZIONI"} />
+                <div className="max-w-2xl text-center">
+                    <p className="text-7xl font-serif">Risultati misurabili e verificabili</p>
+                    <p className="text-gray-500 text-xl">Metriche aggregate da 50+ proprieta gestite in Umbria (gen-dic 2024), confronto anno su anno per immobili in gestione &gt; 24 mesi</p>
+                </div>
+
+                <div className="flex gap-6">
+                    <div className="p-10 bg-gray-100 border shadow flex flex-col items-center gap-10 text-center rounded-md">
+                        <div className="bg-white p-3 rounded-full shadow-inner border">
+                            <TrendingUp />
+                        </div>
+
+                        <div>
+                            <p className="font-serif text-6xl mb-4">+32%</p>
+                            <p className="font-semibold text-lg">INCREMENTO ROI MEDIO</p>
+                            <p className="text-gray-500">Risultato Operativo Netto anno 1 vs gestione autonoma precedente (proprieta comparabili)</p>
+                        </div>
+                    </div>
+                    <div className="p-10 bg-gray-100 border shadow flex flex-col items-center gap-10 text-center rounded-md">
+                        <div className="bg-white p-3 rounded-full shadow-inner border">
+                            <TrendingUp />
+                        </div>
+
+                        <div>
+                            <p className="font-serif text-6xl mb-4">+32%</p>
+                            <p className="font-semibold text-lg">INCREMENTO ROI MEDIO</p>
+                            <p className="text-gray-500">Risultato Operativo Netto anno 1 vs gestione autonoma precedente (proprieta comparabili)</p>
+                        </div>
+                    </div>
+                    <div className="p-10 bg-gray-100 border shadow flex flex-col items-center gap-10 text-center rounded-md">
+                        <div className="bg-white p-3 rounded-full shadow-inner border">
+                            <TrendingUp />
+                        </div>
+
+                        <div>
+                            <p className="font-serif text-6xl mb-4">+32%</p>
+                            <p className="font-semibold text-lg">INCREMENTO ROI MEDIO</p>
+                            <p className="text-gray-500">Risultato Operativo Netto anno 1 vs gestione autonoma precedente (proprieta comparabili)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
