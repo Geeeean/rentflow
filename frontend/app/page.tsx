@@ -7,6 +7,7 @@ import Badge from "@/components/badge";
 import TimelineCard from "@/components/timeline_card";
 import { Card1 } from "@/components/card1";
 import { CardProof } from "@/components/card_proof";
+import { FAQs } from "@/components/faqs";
 
 export default function Home() {
     return (
@@ -271,6 +272,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+            <FAQs />
         </div>
     );
 }
