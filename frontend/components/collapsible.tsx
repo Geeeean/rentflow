@@ -1,5 +1,6 @@
 "use client"
 
+import { ChevronDown, ChevronUp } from "lucide-react"
 import { motion } from "motion/react"
 import { useState } from "react"
 
@@ -14,7 +15,7 @@ type Props = {
 const collapsibleVariants = {
     open: {
         height: "auto",
-        marginTop: "1rem"
+        marginTop: "0"
     },
     closed: {
         height: 0,
@@ -26,18 +27,20 @@ const Collapsible = ({ title, desc }: Props) => {
     const [open, setOpen] = useState<boolean>(false);
 
     return (
-        <div className='text-lg p-4 w-full first:border-t border-b border-white/30 cursor-pointer' onClick={() => {
+        <div className='text-lg w-full first:border-t py-2 border-b border-white/30 cursor-pointer' onClick={() => {
             setOpen(prec => !prec)
         }}>
-            <div className="flex justify-between items-start gap-2">
-                <span>{title}</span>
+            <div className="flex justify-between items-start">
+                <span className="text-md font-semibold">{title}</span>
                 <div className="mt-1">
-                    {open ? "O" : "X"}
+                    {open ? <ChevronUp /> : <ChevronDown />}
                 </div>
             </div>
-            <motion.div className="overflow-hidden" variants={collapsibleVariants} initial="closed" animate={open ? "open" : "closed"}>
+            <motion.div className="overflow-hidden text-gray-800" variants={collapsibleVariants} initial="closed" animate={open ? "open" : "closed"}>
                 {desc}
             </motion.div>
+
+            <div className="w-full bg-gray-200 h-px mt-2" />
         </div>
     )
 }

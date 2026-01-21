@@ -273,7 +273,12 @@ export default function Home() {
                 </div>
             </div>
 
-            <FAQs />
+            <div className="px-10 flex flex-col items-center gap-12">
+                <Badge text="DOMANDE FREQUENTI" />
+                <div className="flex flex-col">
+                    <FAQs />
+                </div>
+            </div>
         </div>
     );
 }
