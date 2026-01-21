@@ -1,3 +1,4 @@
+import { Footer } from "./footer";
 import Nav from "./nav";
 
 const Layout = ({
@@ -6,9 +7,10 @@ const Layout = ({
     children: React.ReactNode;
 }>) => {
     return (
-        <main className="bg-stone-50/50">
+        <main className="bg-blue-50/30">
             <Nav />
             {children}
+            <Footer />
         </main>
     )
 }

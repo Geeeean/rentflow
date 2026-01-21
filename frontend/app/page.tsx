@@ -1,108 +1,32 @@
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ArrowRightFromLine, CircleCheck, Key, Shield, TrendingUp } from "lucide-react";
-import Badge from "@/components/badge";
+import { Badge } from "@/components/badge";
+import { ArrowRight, ArrowUpRight, Atom, Brain, BrushCleaning, ChartNoAxesColumnIncreasing, Handshake, Key, Shield, TrendingUp } from "lucide-react";
 import TimelineCard from "@/components/timeline_card";
 import { Card1 } from "@/components/card1";
 import { CardProof } from "@/components/card_proof";
 import { FAQs } from "@/components/faqs";
+import { Hero } from "@/components/hero";
 
 export default function Home() {
     return (
         <div>
-            {
-                // hero
-            }
-            <div className="flex items-center justify-between px-10">
-                <div className="flex flex-col gap-4 w-[40%]">
-                    <Badge text={"SOCIO STRATEGICO IMMOBILIARE"} />
-                    <div className="text-7xl font-serif">
-                        <div>RENTFLOW</div>
-                        <div className="italic text-blue-500">il partner strategico </div>
-                        <div>per il tuo immobile</div>
-                    </div>
-                    <p className="text-lg text-gray-500">Massimizziamo il rendimento, proteggiamo il valore e riduciamo i rischi. Soluzioni modulabili: full-service o supporto mirato.</p>
-                    <div className="flex flex-col gap-1">
-                        <div className="flex items-start gap-2">
-                            <CircleCheck />
-                            <p className="text-gray-500">
-                                Entrate certe: pagamenti anticipati OTA e depositi cauzionali su prenotazioni dirette
-                            </p>
-                        </div>
-                        <div className="flex items-start gap-2">
-                            <CircleCheck />
-                            <p className="text-gray-500">
-                                Manutenzione continua: ispezioni e pulizie certificate, ad ogni checkout per ridurre l'usura
-                            </p>
-                        </div>
-                        <div className="flex items-start gap-2">
-                            <CircleCheck />
-                            <p className="text-gray-500">
-                                Coperture doppie: assicurazioni OTA + polizza integrativa Rentflow per sinistri e danni
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-[url('/flat.jpg')] w-[55%] bg-center bg-cover rounded-md p-16">
-                    <div className="bg-gray-50 p-10 rounded-lg max-w-lg shadow-md flex flex-col gap-6">
-                        <div className="mb-1">
-                            <p className="font-serif text-3xl">Richiedi la valutazione <span className="font-medium">gratuita</span></p>
-                            <p className="text-gray-400 font-medium">
-                                Ricevi il report Pal. personalizzato entro 24 ore. Se non troviamo margine positivo, ti diciamo perché. Zero perdite di tempo
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="name" className="font-semibold">NOME E COGNOME</Label>
-                            <Input placeholder="Mario Rossi" id="name" />
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="email" className="font-semibold">EMAIL</Label>
-                            <Input placeholder="mario.rossi@gmail.com" id="email" type="email" />
-                            <p className="text-gray-400 text-sm">La useremo per contattarti. Non condivideremo le tue informazioni con nessun altro.</p>
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="telephone" className="font-semibold">TELEFONO</Label>
-                            <Input placeholder="+39 3335004460" id="telephone" />
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="locality" className="font-semibold">LOCALITA'</Label>
-                            <Input placeholder="Perugia, Centro" id="locality" />
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="note" className="font-semibold">NOTA (FACOLTATIVA)</Label>
-                            <Textarea placeholder="Tipo immobile, metratura, camere, ..." id="note" />
-                        </div>
-
-                        <div className="w-full">
-                            <Button className="w-full">Richiedi valutazione gratuita</Button>
-                            <p className="text-gray-400 text-sm">Analisi di redditività completa. Nessuna email promozionale.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Hero />
 
             <div className="flex items-center justify-center gap-24 py-24 bg-gray-100 rounded-lg my-36">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4">
                     <p className="font-serif text-7xl">85%</p>
                     <p className="text-gray-500 font-semibold">OCCUPAZIONE MEDIA</p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4">
                     <p className="font-serif text-7xl">4.8/5</p>
                     <p className="text-gray-500 font-semibold">VALUTAZIONE OSPITI</p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4">
                     <p className="font-serif text-7xl">50+</p>
                     <p className="text-gray-500 font-semibold">IMMOBILI GESTITI</p>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4">
                     <p className="font-serif text-7xl">24/7</p>
                     <p className="text-gray-500 font-semibold">ASSISTENZA</p>
                 </div>
@@ -127,24 +51,37 @@ export default function Home() {
 
                     <div className="p-10 flex flex-col flex-1 bg-gray-100 gap-6 rounded-md border shadow">
                         <div className="p-3 bg-white rounded-full w-fit border shadow">
-                            <Shield />
+                            <BrushCleaning />
                         </div>
                         <div>
-                            <p className="font-serif text-3xl">Riduzione del rischio</p>
-                            <p className="text-gray-500 text-lg">Pagamenti anticipati, depositi cauzionali e gestione sinistri.</p>
+                            <p className="font-serif text-3xl">Cura quotidiana</p>
+                            <p className="text-gray-500 text-lg">Ispezioni e pulizia ad ogni checkout, meno usura.</p>
                         </div>
                     </div>
 
                     <div className="p-10 flex flex-col flex-1 bg-gray-100 gap-6 rounded-md border shadow">
                         <div className="p-3 bg-white rounded-full w-fit border shadow">
-                            <Shield />
+                            <ChartNoAxesColumnIncreasing />
                         </div>
                         <div>
-                            <p className="font-serif text-3xl">Riduzione del rischio</p>
-                            <p className="text-gray-500 text-lg">Pagamenti anticipati, depositi cauzionali e gestione sinistri.</p>
+                            <p className="font-serif text-3xl">Decisioni guidate dai numeri</p>
+                            <p className="text-gray-500 text-lg">Report, KPI e interventi mirati.</p>
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <div className="px-10 w-full mb-56">
+                <div className="flex justify-between w-full p-6 rounded-lg items-end">
+                    <div className="flex flex-col gap-4 w-[40%]">
+                        <Badge text="COPERTURE" />
+                        <p className="text-5xl">Massimizza il rendimento del tuo immobile senza stress</p>
+                    </div>
+
+                    <div className="w-[45%] text-lg">
+                        Con Rentflow il tuo immobile è sempre protetto e pronto a generare reddito. Offriamo coperture OTA e polizza integrativa Rentflow, pagamenti anticipati e depositi cauzionali garantiti. Gestiamo ogni sinistro e assicuriamo pulizie certificate ad ogni checkout, per massima sicurezza e zero stress.
+                    </div>
                 </div>
             </div>
 
@@ -182,7 +119,7 @@ export default function Home() {
                         text={"Dashboard con KPI operativi: NOI, ADR, RevPAR, occupazione, ripartizione costi. Dati trasparenti e utilizzabili."}
                     />
                 </div>
-                <Button size="lg" type="button">Scopri il servizio completo</Button>
+                <Button size="lg" type="button" className="bg-emerald-950">Scopri il servizio completo</Button>
             </div>
 
             <div className="bg-gray-100 py-24 flex flex-col items-center gap-12 px-12 mb-56">
@@ -193,11 +130,11 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-3 gap-6">
-                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate" />
-                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate" />
-                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate" />
-                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate" />
-                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate" />
+                    <Card1 icon={<Key />} title="Gestioni brevi" text="Listing ottimizzati, revenue management, check-in/out e pulizie certificate." />
+                    <Card1 icon={<Atom />} title="Gestione Medio Termine & Tradizionale" text="Selezione inquilini e contratti su misura." />
+                    <Card1 icon={<Brain />} title="Intermediazione Immobiliare" text="Vendite, localizzazioni e consulenza con agenzia partner." />
+                    <Card1 icon={<TrendingUp />} title="Consulenza sugli Invesimenti" text="Analisi investimento, scenario rendimento e strategia valorizzazione." />
+                    <Card1 icon={<Handshake />} title="Consulenza Contrattuale & Fiscale" text="Rete di professionisti per adempimenti e ottimizzazione." />
                 </div>
             </div>
 
@@ -273,10 +210,27 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center gap-12">
+            <div className="px-10 flex flex-col items-center gap-12 mb-20">
                 <Badge text="DOMANDE FREQUENTI" />
                 <div className="flex flex-col">
                     <FAQs />
+                </div>
+            </div>
+
+            <div className="px-10 w-full relative">
+                <div className="w-full h-150 rounded-lg bg-[url('/interior4.jpg')] bg-center bg-cover relative overflow-hidden flex flex-col justify-end items-center">
+                    <div className="z-0 absolute inset-0 backdrop-blur-xs bg-emerald-400/20"></div>
+                    <div className="relative flex flex-col items-center z-10 gap-4 mb-12">
+                        <Badge text="SU MISURA PER TE" />
+                        <div className="text-center flex flex-col items-center gap-2">
+                            <p className="text-5xl text-white">I primi passi per un investimento sicuro</p>
+                            <p className="text-2xl text-gray-200 max-w-[75%] font-light">Contattaci oggi per scoprire come Rentflow può aiutarti a massimizzare il valore del tuo immobile</p>
+                        </div>
+                        <div className="pl-4 pr-2 py-2 bg-emerald-950 text-white rounded-full flex gap-3 items-center">
+                            <span className="font-semibold">Contattaci</span>
+                            <div className="p-1 bg-white text-black rounded-full"><ArrowRight size={20} /></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
