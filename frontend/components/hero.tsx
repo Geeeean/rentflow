@@ -7,7 +7,7 @@ import { CircleCheck, Sparkle } from "lucide-react";
 
 const Hero = () => {
     return (
-        <div className="grid grid-cols-5 grid-rows-5 gap-5 h-screen px-10">
+        <div className="grid grid-cols-5 grid-rows-5 gap-5 h-screen px-10 pt-20 snap-start">
             <div className="col-span-3 row-span-3 py-6 ">
                 <Badge text={"SOCIO STRATEGICO IMMOBILIARE"} />
                 <div className="text-7xl font-serif mt-5">

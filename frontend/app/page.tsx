@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/badge";
-import { ArrowRight, ArrowUpRight, Atom, Brain, BrushCleaning, ChartNoAxesColumnIncreasing, Handshake, Key, Shield, TrendingUp } from "lucide-react";
+import { ArrowRight, Atom, Brain, BrushCleaning, ChartNoAxesColumnIncreasing, Handshake, Key, Shield, TrendingUp } from "lucide-react";
 import TimelineCard from "@/components/timeline_card";
 import { Card1 } from "@/components/card1";
 import { CardProof } from "@/components/card_proof";
@@ -9,10 +9,10 @@ import { Hero } from "@/components/hero";
 
 export default function Home() {
     return (
-        <div>
+        <>
             <Hero />
 
-            <div className="px-10 w-full h-screen flex justify-center">
+            <div className="px-10 w-full h-screen flex justify-center snap-start">
                 <div className="flex justify-between w-full items-center p-6 rounded-lg">
                     <div className="flex flex-col gap-4 w-[40%]">
                         <p className="text-5xl">Chi siamo</p>
@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col gap-12 h-screen justify-center">
+            <div className="px-10 flex flex-col gap-12 h-screen justify-center snap-start">
                 <Badge text={"GARANZIE & SICUREZZA"} />
                 <div>
                     <p className="text-7xl font-serif italic">Perché affidarsi a noi</p>
@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 w-full flex h-screen flex-col justify-center">
+            <div className="px-10 w-full flex h-screen flex-col justify-center snap-start">
                 <div className="flex justify-between w-full p-6 rounded-lg items-end">
                     <div className="flex flex-col gap-4 w-[40%]">
                         <Badge text="COPERTURE" />
@@ -100,7 +100,7 @@ export default function Home() {
             </div>
 
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center snap-start">
                 <Badge text={"COME FUNZIONA"} />
                 <div className="max-w-2xl">
                     <p className="text-7xl font-serif italic">Processo efficiente e scalabile</p>
@@ -136,7 +136,7 @@ export default function Home() {
                 <Button size="lg" type="button" className="bg-blue-950">Scopri il servizio completo</Button>
             </div>
 
-            <div className="bg-gray-100 py-24 flex flex-col items-center gap-12 px-12">
+            <div className="bg-gray-100 py-24 flex flex-col items-center gap-12 px-12 snap-center">
                 <Badge text="SOLUZIONI MODULARI COMPLETE" />
                 <div className="max-w-2xl text-center">
                     <p className="text-7xl font-serif">Cinque servizi, infinite combinazioni</p>
@@ -152,7 +152,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center snap-start">
                 <Badge text={"PROVA SOCIALE"} />
                 <div className="max-w-2xl text-center">
                     <p className="text-6xl font-serif">Cosa dicono i nostri clienti</p>
@@ -180,7 +180,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center snap-start">
                 <Badge text={"VERIFICA DELLE PRESTAZIONI"} />
                 <div className="max-w-2xl text-center">
                     <p className="text-7xl font-serif">Risultati misurabili e verificabili</p>
@@ -224,14 +224,14 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center gap-12 my-32">
+            <div className="px-10 flex flex-col items-center gap-12 mb-64 snap-center">
                 <Badge text="DOMANDE FREQUENTI" />
                 <div className="flex flex-col">
                     <FAQs />
                 </div>
             </div>
 
-            <div className="px-10 w-full relative">
+            <div className="px-10 w-full relative snap-start">
                 <div className="w-full h-150 rounded-lg bg-[url('/interior4.jpg')] bg-center bg-cover relative overflow-hidden flex flex-col justify-end items-center">
                     <div className="z-0 absolute inset-0 backdrop-blur-xs bg-blue-400/20"></div>
                     <div className="relative flex flex-col items-center z-10 gap-4 mb-12">
@@ -247,6 +247,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
