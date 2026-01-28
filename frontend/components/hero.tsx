@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/badge";
-import { CircleCheck, HeartHandshake, Sparkle, Star } from "lucide-react";
+import { CircleCheck, Sparkle } from "lucide-react";
 
 const Hero = () => {
     return (
@@ -12,7 +12,7 @@ const Hero = () => {
                 <Badge text={"SOCIO STRATEGICO IMMOBILIARE"} />
                 <div className="text-7xl font-serif mt-5">
                     <div>RENTFLOW</div>
-                    <div className="italic text-emerald-600">il partner strategico</div>
+                    <div className="italic text-blue-950">il partner strategico</div>
                     <div>per il tuo immobile.</div>
                 </div>
                 <p className="text-xl text-gray-500 mt-6">
@@ -78,13 +78,37 @@ const Hero = () => {
                     </div>
 
                     <div className="w-full text-center">
-                        <Button className="w-full bg-emerald-950">Richiedi valutazione gratuita</Button>
+                        <Button className="w-full bg-blue-950">Richiedi valutazione gratuita</Button>
                         <p className="text-gray-400 text-sm">Analisi di redditività completa. Nessuna email promozionale.</p>
                     </div>
                 </div>
             </div>
 
-            <div className="p-4 relative col-start-1 row-start-4 col-span-3 row-span-2 rounded-lg bg-red-500">
+            <div className="flex flex-col justify-between col-start-1 row-start-4 col-span-3 row-span-2 rounded-lg border shadow bg-blue-950 p-10">
+                <div className="p-2 rounded-full bg-white text-blue-950 w-fit"><Sparkle /></div>
+                <div className="text-white flex flex-col">
+                    <p className="text-4xl font-medium">Numeri Che Dimostrano la Differenza</p>
+                    <p className="text-lg ">
+                        Ottenere performance superiori non è un’eccezione: è il risultato di un approccio strutturato e data‑driven. Qui sotto ti mostriamo le metriche chiave che guidano il nostro modo di lavorare.
+                    </p>
+                </div>
+
+                {
+                    // <div className="text-white flex justify-between">
+                    //     <div className="flex flex-col items-center gap-2">
+                    //         <p className="font-semibold text-5xl">85%</p>
+                    //         <p className="text-gray-100 font-black text-sm">OCCUPAZIONE MEDIA</p>
+                    //     </div>
+                    //     <div className="flex flex-col items-center gap-2">
+                    //         <p className="font-semibold text-5xl">4.8/5</p>
+                    //         <p className="text-gray-100 font-black text-sm">VALUTAZIONE OSPITI</p>
+                    //     </div>
+                    //     <div className="flex flex-col items-center gap-2">
+                    //         <p className="font-semibold text-5xl">50+</p>
+                    //         <p className="text-gray-100 font-black text-sm">IMMOBILI GESTITI</p>
+                    //     </div>
+                    // </div>
+                }
             </div>
         </div>
     );

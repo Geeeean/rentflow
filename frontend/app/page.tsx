@@ -12,27 +12,41 @@ export default function Home() {
         <div>
             <Hero />
 
-            <div className="flex items-center justify-center gap-24 py-24 bg-gray-100 rounded-lg my-36">
-                <div className="flex flex-col items-center gap-4">
-                    <p className="font-serif text-7xl">85%</p>
-                    <p className="text-gray-500 font-semibold">OCCUPAZIONE MEDIA</p>
-                </div>
-                <div className="flex flex-col items-center gap-4">
-                    <p className="font-serif text-7xl">4.8/5</p>
-                    <p className="text-gray-500 font-semibold">VALUTAZIONE OSPITI</p>
-                </div>
-                <div className="flex flex-col items-center gap-4">
-                    <p className="font-serif text-7xl">50+</p>
-                    <p className="text-gray-500 font-semibold">IMMOBILI GESTITI</p>
-                </div>
+            <div className="px-10 w-full h-screen flex justify-center">
+                <div className="flex justify-between w-full items-center p-6 rounded-lg">
+                    <div className="flex flex-col gap-4 w-[40%]">
+                        <p className="text-5xl">Chi siamo</p>
+                        <div className=" text-lg">
+                            Siamo un team appassionato di gestione immobiliare, specializzato nel trasformare proprietà in investimenti redditizi e sicuri. Con un approccio strategico e operativo, proteggiamo il valore degli immobili, massimizziamo il rendimento e assicuriamo una gestione senza pensieri, sempre trasparente e misurabile.
+                        </div>
+                        <div className="font-semibold flex items-center gap-2">
+                            <span>Scopri di piu</span>
+                            <ArrowRight />
+                        </div>
+                    </div>
 
-                <div className="flex flex-col items-center gap-4">
-                    <p className="font-serif text-7xl">24/7</p>
-                    <p className="text-gray-500 font-semibold">ASSISTENZA</p>
+                    <div className="flex justify-between gap-20">
+                        <div className="flex flex-col items-center gap-2">
+                            <p className="text-5xl">85%</p>
+                            <p className="text-sm">occupazione media</p>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <p className="text-5xl">4.8/5</p>
+                            <p className="text-sm">valutazione ospiti</p>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <p className="text-5xl">50+</p>
+                            <p className="text-sm">immobili gestiti</p>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <p className="text-5xl">24/7</p>
+                            <p className="text-sm">assistenza</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col gap-12 mb-56">
+            <div className="px-10 flex flex-col gap-12 h-screen justify-center">
                 <Badge text={"GARANZIE & SICUREZZA"} />
                 <div>
                     <p className="text-7xl font-serif italic">Perché affidarsi a noi</p>
@@ -72,7 +86,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 w-full mb-56">
+            <div className="px-10 w-full flex h-screen flex-col justify-center">
                 <div className="flex justify-between w-full p-6 rounded-lg items-end">
                     <div className="flex flex-col gap-4 w-[40%]">
                         <Badge text="COPERTURE" />
@@ -86,7 +100,7 @@ export default function Home() {
             </div>
 
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 mb-56">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
                 <Badge text={"COME FUNZIONA"} />
                 <div className="max-w-2xl">
                     <p className="text-7xl font-serif italic">Processo efficiente e scalabile</p>
@@ -119,10 +133,10 @@ export default function Home() {
                         text={"Dashboard con KPI operativi: NOI, ADR, RevPAR, occupazione, ripartizione costi. Dati trasparenti e utilizzabili."}
                     />
                 </div>
-                <Button size="lg" type="button" className="bg-emerald-950">Scopri il servizio completo</Button>
+                <Button size="lg" type="button" className="bg-blue-950">Scopri il servizio completo</Button>
             </div>
 
-            <div className="bg-gray-100 py-24 flex flex-col items-center gap-12 px-12 mb-56">
+            <div className="bg-gray-100 py-24 flex flex-col items-center gap-12 px-12">
                 <Badge text="SOLUZIONI MODULARI COMPLETE" />
                 <div className="max-w-2xl text-center">
                     <p className="text-7xl font-serif">Cinque servizi, infinite combinazioni</p>
@@ -138,7 +152,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 mb-56">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
                 <Badge text={"PROVA SOCIALE"} />
                 <div className="max-w-2xl text-center">
                     <p className="text-6xl font-serif">Cosa dicono i nostri clienti</p>
@@ -166,7 +180,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center text-center gap-12 mb-56">
+            <div className="px-10 flex flex-col items-center text-center gap-12 h-screen justify-center">
                 <Badge text={"VERIFICA DELLE PRESTAZIONI"} />
                 <div className="max-w-2xl text-center">
                     <p className="text-7xl font-serif">Risultati misurabili e verificabili</p>
@@ -210,7 +224,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="px-10 flex flex-col items-center gap-12 mb-20">
+            <div className="px-10 flex flex-col items-center gap-12 my-32">
                 <Badge text="DOMANDE FREQUENTI" />
                 <div className="flex flex-col">
                     <FAQs />
@@ -219,14 +233,14 @@ export default function Home() {
 
             <div className="px-10 w-full relative">
                 <div className="w-full h-150 rounded-lg bg-[url('/interior4.jpg')] bg-center bg-cover relative overflow-hidden flex flex-col justify-end items-center">
-                    <div className="z-0 absolute inset-0 backdrop-blur-xs bg-emerald-400/20"></div>
+                    <div className="z-0 absolute inset-0 backdrop-blur-xs bg-blue-400/20"></div>
                     <div className="relative flex flex-col items-center z-10 gap-4 mb-12">
                         <Badge text="SU MISURA PER TE" />
                         <div className="text-center flex flex-col items-center gap-2">
                             <p className="text-5xl text-white">I primi passi per un investimento sicuro</p>
                             <p className="text-2xl text-gray-200 max-w-[75%] font-light">Contattaci oggi per scoprire come Rentflow può aiutarti a massimizzare il valore del tuo immobile</p>
                         </div>
-                        <div className="pl-4 pr-2 py-2 bg-emerald-950 text-white rounded-full flex gap-3 items-center">
+                        <div className="pl-4 pr-2 py-2 bg-blue-950 text-white rounded-full flex gap-3 items-center">
                             <span className="font-semibold">Contattaci</span>
                             <div className="p-1 bg-white text-black rounded-full"><ArrowRight size={20} /></div>
                         </div>

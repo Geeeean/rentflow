@@ -3,7 +3,7 @@ import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 
 const Footer = () => {
-    return <div className="mt-20 w-full p-10 bg-emerald-900 flex justify-between text-white">
+    return <div className="mt-20 w-full p-10 bg-blue-950 flex justify-between text-white">
         <div className="flex flex-col justify-between">
             <div>
                 <div className="text-9xl font-bold">rentflow.</div>
