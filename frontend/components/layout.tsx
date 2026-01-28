@@ -7,11 +7,13 @@ const Layout = ({
     children: React.ReactNode;
 }>) => {
     return (
-        <main className="bg-blue-50/30 snap-y snap-mandatory h-screen overflow-y-scroll">
-            <Nav />
-            {children}
-            <Footer />
-        </main>
+        <>
+            <main className="snap-y scroll-smooth lg:snap-mandatory h-screen overflow-y-scroll">
+                <Nav />
+                {children}
+                <Footer />
+            </main>
+        </>
     )
 }
 

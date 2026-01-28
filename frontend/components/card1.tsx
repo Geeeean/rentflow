@@ -13,7 +13,7 @@ const Card1 = ({ icon, title, text }: Props) => {
             {icon}
         </div>
         <div>
-            <p className="font-serif text-3xl">{title}</p>
+            <p className="font-serif text-2xl lg:text-3xl mb-2 lg:mb-0">{title}</p>
             <p className="text-gray-500">{text}</p>
         </div>
         <div className="font-semibold flex items-center gap-2">
