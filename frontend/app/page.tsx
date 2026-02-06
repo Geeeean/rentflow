@@ -16,7 +16,8 @@ import {
     CheckCircle2,
     Quote,
     Star,
-    CircleCheck
+    CircleCheck,
+    Plus
 } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -98,15 +99,17 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="hidden lg:block bg-stone-200 row-span-1 col-span-3 row-start-5">
-                        DEVO METTERE QUALCOSA QUI
+                    <div className="hidden lg:block bg-slate-200 rounded-2xl shadow-lg relative row-span-1 col-span-3 row-start-5">
+                        <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-medium">
+                            qualcosa
+                        </div>
                     </div>
 
                     <div className="col-span-2 row-span-5 lg:grid grid-rows-5 gap-5 *:rounded-lg *:shadow relative">
-                        <div className="hidden lg:block relative row-span-3 bg-[url('/interior1.jpg')] bg-center bg-contain overflow-hidden">
+                        <div className="hidden lg:block relative shadow-lg row-span-3 bg-[url('/interior1.jpg')] bg-center bg-contain overflow-hidden">
                             <div className="absolute inset-0 backdrop-blur-xs"></div>
                         </div>
-                        <div className="hidden lg:block relative row-span-2 bg-[url('/interior4.jpg')] bg-center bg-contain overflow-hidden">
+                        <div className="hidden lg:block relative row-span-2 shadow-lg bg-[url('/interior4.jpg')] bg-center bg-contain overflow-hidden">
                             <div className="absolute inset-0 backdrop-blur-xs"></div>
                         </div>
 
@@ -155,7 +158,7 @@ export default function Home() {
 
 
             < div className="pb-24 pt-5 px-4 lg:px-10 snap-center flex items-center" >
-                <div className="max-w-7xl mx-auto flex flex-col gap-16">
+                <div className="max-w-7xl mx-auto shadow-lg overflow-hidden flex flex-col gap-16">
                     <div className="bg-slate-900 rounded-2xl p-10 lg:p-16 text-white flex flex-col lg:flex-row items-center gap-10 shadow-lg">
                         <div className="lg:w-1/2">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-blue-200 text-sm font-medium mb-6 border border-white/20">
@@ -183,6 +186,29 @@ export default function Home() {
                     </div>
                 </div>
             </div >
+
+            <div className="w-full h-screen flex justify-center snap-start">
+                <div className="max-w-7xl flex justify-between w-full items-center p-6 rounded-lg">
+                    <div className="flex flex-col gap-4 w-[40%]">
+                        <p className="text-5xl font-serif">Chi siamo</p>
+                        <div className=" text-lg">
+                            Siamo un team appassionato di gestione immobiliare, specializzato nel trasformare proprietà in investimenti redditizi e sicuri. Con un approccio strategico e operativo, proteggiamo il valore degli immobili, massimizziamo il rendimento e assicuriamo una gestione senza pensieri, sempre trasparente e misurabile.
+                        </div>
+                        <a href="/about-us">
+                            <div className="font-semibold flex items-center gap-2">
+                                <span>Scopri di piu</span>
+                                <ArrowRight />
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="w-[50%] bg-slate-200 rounded-2xl shadow-lg h-96 relative">
+                        <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-medium">
+                            Immagine
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             < div className="bg-white py-24 px-4 lg:px-10 snap-start min-h-screen flex items-center" >
                 <div className="max-w-7xl mx-auto">
@@ -217,7 +243,29 @@ export default function Home() {
                 </div>
             </div >
 
-            < div className="py-24 px-4 lg:px-10 snap-start  min-h-screen flex item-center lg:pt-40" >
+            <div className="relative py-24 px-4 lg:px-10 snap-start h-screen flex item-center lg:pt-30 w-full" >
+                <div className="mx-auto max-w-7xl bg-[url('/interior5.jpg')] bg-center bg-cover overflow-hidden rounded-lg h-full w-full relative">
+                    <div className="absolute top-4 left-4 text-white lg:max-w-xl text-xl font-medium">Immobili selezionati, gestiti e ottimizzati con il nostro metodo. Ogni alloggio è il risultato di strategie di pricing, cura operativa e analisi dei dati orientate alla massima performance.</div>
+                    <div className="absolute bottom-4 pl-4 pr-2 shadow py-2 right-4 bg-white rounded-md flex gap-4 items-center">
+                        <span className="font-semibold">
+                            Scopri i nostri immobili
+                        </span>
+                        <div className="text-white bg-black p-3 rounded-sm">
+                            <Plus size={16} />
+                        </div>
+                    </div>
+                    <div className="absolute left-4 bottom-4 flex gap-2">
+                        <div className="max-w-sm bg-slate-50/30 font-medium p-3 rounded-md text-white shadow backdrop-blur-xl ">
+                            Immobili gestiti secondo standard operativi certificati. Ogni alloggio è ottimizzato con strategie di pricing dinamico, controllo qualità continuo e analisi dei dati orientata alla massima redditività.
+                        </div>
+                        <div className="max-w-xs bg-slate-50/30 font-medium p-3 rounded-md text-white shadow-inner backdrop-blur-xl ">
+                            Il risultato è un portafoglio di immobili con occupazione elevata, recensioni eccellenti e rendimenti ottimizzati, dove estetica, comfort e dati lavorano insieme.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            < div className="py-24 px-4 lg:px-10 snap-start  min-h-screen flex item-center lg:pt-30" >
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
                     <div className="lg:w-1/3">
                         <span className="text-sm font-bold uppercase tracking-widest text-orange-600 mb-3 block">Come Funziona</span>
@@ -262,7 +310,7 @@ export default function Home() {
                 </div>
             </div >
 
-            < div className=" bg-white py-24 px-4 lg:px-10 snap-start min-h-screen flex item-center lg:pt-40" >
+            < div className=" bg-white py-24 px-4 lg:px-10 snap-start min-h-screen flex item-center lg:pt-30" >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <span className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-3 block">Soluzioni Modulari</span>
@@ -309,7 +357,7 @@ export default function Home() {
                 </div>
             </div >
 
-            < div className="py-24 px-4 lg:px-10 snap-start lg:pt-40" >
+            < div className="py-24 px-4 lg:px-10 snap-start lg:pt-30" >
                 <div className="max-w-7xl mx-auto flex flex-col gap-20">
 
                     <div>

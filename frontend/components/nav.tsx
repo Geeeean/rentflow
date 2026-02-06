@@ -1,8 +1,8 @@
 import { ArrowRight, House, Layers, UsersRound } from "lucide-react";
 
 const Nav = () => {
-    return <div className="pb-4 sticky top-0 left-0 z-50  py-4 px-4  snap-none h-20 flex justify-center items-center bg-stone-50/50 backdrop-blur-2xl ">
-        <div className="flex items-center justify-between lg:px-10 z-50 w-7xl">
+    return <div className="pb-4 sticky top-0 left-0 z-50  py-4 px-4 lg:px-0 snap-none h-20 flex justify-center items-center bg-stone-50/50 backdrop-blur-2xl ">
+        <div className="flex items-center justify-between z-50 w-7xl">
             <a className="font-bold text-xl" href="/">rentflow</a>
             <div className="hidden lg:flex gap-16 items-center ">
                 <div className="h-fit cursor-pointer flex items-center gap-2">
