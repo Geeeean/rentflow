@@ -6,11 +6,9 @@ export const contentType = "image/png";
 // rendered to a file at build time rather than served from a running server.
 export const dynamic = "force-static";
 
-// Same "r" outline as app/icon.svg and app/favicon.ico, so every surface shows one mark.
-// Drawn as a path rather than set as text: ImageResponse has no serif/bold face bundled,
-// and the glyph shape shouldn't depend on what fonts happen to be available.
-const R_PATH = "M19 53 L19 15 L32 15 L32 24 C36 17 45 12 53 15 L49 28 C42 26 34 32 32 40 L32 53 Z";
-
+// Same "R" outline as app/icon.svg, matching the favicon.ico that came in from the remote.
+// Drawn as strokes rather than set as text: ImageResponse has no bold face bundled, and the
+// glyph shouldn't depend on what fonts happen to be available at build time.
 // Apple fills the full square and applies its own rounding, so no corner radius here.
 export default function AppleIcon() {
     return new ImageResponse(
@@ -22,11 +20,15 @@ export default function AppleIcon() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    background: "#0f172a",
+                    background: "#0738ca",
                 }}
             >
                 <svg width="132" height="132" viewBox="0 0 64 64">
-                    <path d={R_PATH} fill="#ffffff" />
+                    <g fill="none" stroke="#ffffff" strokeWidth="11" strokeLinejoin="round">
+                        <path d="M18 11.5V52" />
+                        <path d="M18 17h18a10 10 0 0 1 0 20H18" />
+                        <path d="M30 37L44 52" />
+                    </g>
                 </svg>
             </div>
         ),
