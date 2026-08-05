@@ -1,46 +1,57 @@
 "use client"
 
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { motion } from "motion/react"
-import { useState } from "react"
-
-// import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-
+import { useId, useState } from "react"
 
 type Props = {
     title: string,
-    desc: string | React.JSX.Element
+    desc: string
 }
 
+// `visibility` is what actually removes the collapsed answer from the accessibility tree and
+// from find-in-page — height:0 alone leaves screen readers announcing it. It's held visible
+// through the closing animation so the text doesn't vanish before the panel finishes.
 const collapsibleVariants = {
-    open: {
-        height: "auto",
-        marginTop: "0"
-    },
-    closed: {
-        height: 0,
-        marginTop: 0
-    }
+    open: { height: "auto", opacity: 1, visibility: "visible" as const },
+    closed: { height: 0, opacity: 0, transitionEnd: { visibility: "hidden" as const } }
 }
 
 const Collapsible = ({ title, desc }: Props) => {
     const [open, setOpen] = useState<boolean>(false);
+    const panelId = useId();
 
     return (
-        <div className='text-lg w-full first:border-t py-2 border-b border-white/30 cursor-pointer' onClick={() => {
-            setOpen(prec => !prec)
-        }}>
-            <div className="flex justify-between items-start">
-                <span className="text-md font-semibold">{title}</span>
-                <div className="mt-1">
-                    {open ? <ChevronUp /> : <ChevronDown />}
-                </div>
-            </div>
-            <motion.div className="overflow-hidden text-gray-800" variants={collapsibleVariants} initial="closed" animate={open ? "open" : "closed"}>
-                {desc}
-            </motion.div>
+        <div className="w-full border-b border-stone-200 first:border-t">
+            <button
+                type="button"
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => setOpen(prec => !prec)}
+                className="w-full flex justify-between items-start gap-6 text-left py-6 cursor-pointer group"
+            >
+                <span className="font-serif text-xl font-medium text-slate-900 group-hover:text-slate-600 transition-colors">
+                    {title}
+                </span>
+                <motion.div
+                    animate={{ rotate: open ? 180 : 0 }}
+                    className="mt-1 shrink-0 text-slate-400 group-hover:text-slate-900 transition-colors"
+                >
+                    <ChevronDown />
+                </motion.div>
+            </button>
 
-            <div className="w-full bg-gray-200 h-px mt-2" />
+            <motion.div
+                id={panelId}
+                className="overflow-hidden"
+                variants={collapsibleVariants}
+                initial="closed"
+                animate={open ? "open" : "closed"}
+            >
+                <p className="text-slate-600 leading-relaxed pb-6 pr-12 whitespace-pre-line">
+                    {desc}
+                </p>
+            </motion.div>
         </div>
     )
 }

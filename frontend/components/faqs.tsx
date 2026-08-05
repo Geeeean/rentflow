@@ -1,6 +1,9 @@
 import { Collapsible } from "./collapsible"
 
-const FAQS: { title: string, desc: string | React.JSX.Element }[] = [
+// `desc` is deliberately `string`, not `string | JSX.Element`: Collapsible renders it inside
+// a <p>, so block-level JSX would produce invalid nesting and a hydration mismatch. Keeping
+// it plain text is also what lets the FAQPage JSON-LD reuse this array verbatim.
+const FAQS: { title: string, desc: string }[] = [
     {
         title: "La sublocazione è legale?",
         desc: "Sì, la sublocazione è perfettamente legale. È disciplinata dall’art. 1594 del Codice Civile, che ne consente l’utilizzo purché sia espressamente autorizzata dal proprietario dell’immobile."
@@ -24,9 +27,7 @@ Vantaggio per il proprietario: maggiore cura quotidiana, manutenzione preventiva
     },
 ]
 
-type Props = {}
-
-const FAQs = (props: Props) => {
+const FAQs = () => {
     return <>
         {
             FAQS.map(({ title, desc }, index) => {
@@ -36,4 +37,4 @@ const FAQs = (props: Props) => {
     </>
 }
 
-export { FAQs }
+export { FAQs, FAQS }

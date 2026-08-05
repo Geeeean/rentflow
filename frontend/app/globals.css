@@ -3,6 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Height of the sticky nav bar. The scroll-snap system depends on this value agreeing
+   across the nav, the scroll container's snap inset, and each section's height — so it
+   lives here once and everything derives from it (h-nav, top-nav, scroll-pt-nav,
+   var(--spacing-nav)). Not `@theme inline`, which would inline the value and leave
+   nothing to reference from arbitrary values. */
+@theme {
+  --spacing-nav: 5rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

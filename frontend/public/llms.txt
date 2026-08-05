@@ -1,0 +1,50 @@
+# Rentflow
+
+> Rentflow è una società di gestione immobiliare con sede a Perugia, in Umbria. Gestiamo
+> affitti brevi e medio termine per conto dei proprietari: pubblicazione e ottimizzazione
+> degli annunci, pricing dinamico, accoglienza ospiti, pulizie e manutenzione. L'obiettivo è
+> trasformare un immobile in una rendita prevedibile senza carico operativo per il
+> proprietario.
+
+Il sito è in italiano e si rivolge a tre pubblici: proprietari di immobili, investitori
+immobiliari e agenzie immobiliari partner.
+
+## Servizi
+
+- [Servizi](https://rentflow.it/servizi/): i cinque servizi modulari, combinabili.
+  - **Gestioni Brevi** — pacchetto completo per affitti brevi: listing su Airbnb e
+    Booking.com, revenue management, check-in/out, pulizie professionali.
+  - **Medio Termine** — contratti transitori da 1 a 18 mesi per professionisti in trasferta
+    e studenti, con selezione degli inquilini.
+  - **Intermediazione** — compravendita seguita end-to-end con l'agenzia partner.
+  - **Analisi Investimenti** — business plan con scenari di rendimento, stime di
+    occupazione, ADR e RevPAR sul mercato locale.
+  - **Consulenza Fiscale** — rete di commercialisti per adempimenti, cedolare secca e
+    ottimizzazione del carico fiscale.
+
+## Immobili
+
+- [Alloggi](https://rentflow.it/alloggi/): il portafoglio in gestione, con occupazione e
+  valutazione media per immobile. Occupazione media del portafoglio 87%, rating medio 4.85.
+
+## Azienda
+
+- [Chi siamo](https://rentflow.it/about-us/): vision, mission e punti di forza.
+- [Per agenzie](https://rentflow.it/per-agenzie/): proposta di collaborazione per le agenzie
+  immobiliari — Rentflow firma il contratto come conduttore e riconosce la provvigione
+  all'agenzia che presenta l'immobile.
+
+## Contatti
+
+- [Contatti](https://rentflow.it/contatti/): modulo per la valutazione gratuita, con
+  risposta entro 24 ore.
+- Email: info@rentflow.it
+- Telefono: +39 075 555 1234
+- Sede: Perugia, Umbria
+- Orari: Lun–Ven 9:00–19:00
+
+## Note
+
+- Le condizioni economiche non sono pubblicate sul sito: dipendono dall'immobile e vengono
+  definite dopo la valutazione gratuita.
+- L'area servita è l'Umbria, con Perugia come mercato principale.
