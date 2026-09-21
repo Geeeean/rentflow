@@ -6,7 +6,9 @@ import { NAV_LINKS } from "@/components/nav_links";
 
 export const metadata: Metadata = {
     title: "Pagina non trovata",
-    // A 404 must never be indexed, whatever the site-wide default says.
+    // A 404 must never be indexed, whatever the site-wide default says. Next also injects its
+    // own noindex here, so the page carries two robots tags — but dropping this one lets the
+    // layout's "index, follow" through instead, which is worse. Both say noindex; harmless.
     robots: { index: false, follow: true },
 };
 

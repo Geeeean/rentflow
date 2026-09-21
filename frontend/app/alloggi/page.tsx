@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { BedDouble, MapPin, Star, TrendingUp, Users } from "lucide-react";
+import { ArrowUpRight, BedDouble, MapPin, Star, Users } from "lucide-react";
 import { Section, SectionHeading } from "@/components/section";
 import { CtaPill } from "@/components/cta_pill";
 import { ClosingCta } from "@/components/closing_cta";
 import { StatsPanel } from "@/components/stats_panel";
+import { BreadcrumbSchema } from "@/components/structured_data";
+
+const TITLE = "Alloggi in gestione a Perugia";
+const DESCRIPTION = "Gli appartamenti e i casali che gestiamo a Perugia, con valutazioni e recensioni reali degli ospiti Airbnb. Occupazione media del portafoglio 87%.";
 
 export const metadata: Metadata = {
-    title: "Alloggi",
-    description: "Gli immobili che gestiamo: selezionati, ottimizzati con pricing dinamico e controllo qualità continuo.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "/alloggi/" },
-    openGraph: { title: "Alloggi", description: "Gli immobili che gestiamo: selezionati, ottimizzati con pricing dinamico e controllo qualità continuo.", url: "/alloggi/" },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: "/alloggi/" },
 };
 
 type Listing = {
@@ -18,79 +22,75 @@ type Listing = {
     image: string,
     guests: number,
     rooms: number,
-    occupancy: string,
     rating: string,
+    reviews: number,
+    url: string,
     text: string,
 }
 
-// Placeholder portfolio: there is no properties API or CMS behind the site yet.
-// Swap this array for a fetch/import once one exists — the card below is the only consumer.
+// Mirrors the live Airbnb listings: rating and review counts are copied by hand, so refresh
+// them from each `url` when they drift. Photos are local copies in /public/alloggi.
 const LISTINGS: Listing[] = [
     {
-        name: "Attico Duomo",
-        locality: "Perugia, Centro Storico",
-        image: "/interior1.webp",
+        name: "Suite Porta Sole",
+        locality: "Perugia, Porta Sole",
+        image: "/alloggi/suite-porta-sole.webp",
         guests: 4,
         rooms: 2,
-        occupancy: "91%",
-        rating: "4.9",
-        text: "Ultimo piano con vista sui tetti del centro. Ristrutturato e riposizionato sulla fascia business, ha chiuso l'anno sopra la media di zona.",
+        rating: "5.0",
+        reviews: 7,
+        url: "https://www.airbnb.it/rooms/1707290393334522926",
+        text: "Appartamento elegante in un palazzo storico del centro, con due camere matrimoniali, due bagni completi e terrazza privata.",
     },
     {
-        name: "Loft Sant'Ercolano",
-        locality: "Perugia, Sant'Ercolano",
-        image: "/interior3.webp",
-        guests: 2,
-        rooms: 1,
-        occupancy: "88%",
-        rating: "4.8",
-        text: "Monolocale open space per soggiorni brevi. Pricing dinamico aggressivo nei weekend e sui periodi fieristici.",
+        name: "Loft di Design",
+        locality: "Perugia, Centro Storico",
+        image: "/alloggi/loft-di-design.webp",
+        guests: 6,
+        rooms: 2,
+        rating: "4.85",
+        reviews: 46,
+        url: "https://www.airbnb.it/rooms/1577498915137579718",
+        text: "Loft luminoso a soffitti alti con camere sul soppalco. Parcheggio privato fuori dalla ZTL, raro in pieno centro.",
     },
     {
-        name: "Casa Borgo XX Giugno",
-        locality: "Perugia, Borgo XX Giugno",
-        image: "/interior4.webp",
+        name: "Casa Sunflower",
+        locality: "Perugia, Pellini",
+        image: "/alloggi/casa-sunflower.webp",
         guests: 6,
         rooms: 3,
-        occupancy: "84%",
-        rating: "4.9",
-        text: "Trilocale vicino all'università, gestito in medio termine su contratti transitori per studenti e docenti in visita.",
+        rating: "4.71",
+        reviews: 113,
+        url: "https://www.airbnb.it/rooms/1194832013256886000",
+        text: "Su due livelli, con finiture in legno e balcone vista valle. Parcheggio privato e aria condizionata, a 5 minuti dal centro con le scale mobili.",
     },
     {
-        name: "Residenza Monteluce",
-        locality: "Perugia, Monteluce",
-        image: "/interior2.webp",
-        guests: 4,
+        name: "Appartamento San Francesco",
+        locality: "Perugia, San Francesco",
+        image: "/alloggi/appartamento-san-francesco.webp",
+        guests: 6,
         rooms: 2,
-        occupancy: "86%",
-        rating: "4.7",
-        text: "Appartamento in complesso recente, arredato dopo la nostra analisi di mercato per intercettare la clientela business.",
+        rating: "4.52",
+        reviews: 50,
+        url: "https://www.airbnb.it/rooms/1458798616243619265",
+        text: "Nel centro storico a due passi da San Francesco al Prato: due camere matrimoniali, divano letto e due bagni moderni.",
     },
     {
-        name: "Villa Umbra",
-        locality: "Corciano, Umbria",
-        image: "/flat.webp",
-        guests: 8,
-        rooms: 4,
-        occupancy: "78%",
-        rating: "5.0",
-        text: "Immobile fuori città con giardino, posizionato sulla clientela leisure con soggiorni lunghi in alta stagione.",
-    },
-    {
-        name: "Suite Etrusca",
-        locality: "Perugia, Porta Sole",
-        image: "/interior5.webp",
-        guests: 2,
+        name: "Casale Strozzacapponi",
+        locality: "Strozzacapponi, Perugia",
+        image: "/alloggi/casale-strozzacapponi.webp",
+        guests: 4,
         rooms: 1,
-        occupancy: "93%",
-        rating: "4.9",
-        text: "Il nostro immobile con l'occupazione più alta del portafoglio. Alta rotazione, recensioni costantemente sopra il 4.8.",
+        rating: "5.0",
+        reviews: 6,
+        url: "https://www.airbnb.it/rooms/1729085681034357980",
+        text: "Casale umbro appena ristrutturato con vista sulla campagna, a 5 minuti dall'ospedale. Parcheggio privato gratuito.",
     },
 ];
 
 const PORTFOLIO_STATS = [
     { val: "87%", lab: "Occupazione media" },
-    { val: "4.85", lab: "Rating medio" },
+    { val: "4.82", lab: "Rating medio" },
     { val: "50+", lab: "Immobili gestiti" },
     { val: "< 1h", lab: "Tempo di risposta" },
 ];
@@ -100,13 +100,13 @@ const ListingCard = ({ listing }: { listing: Listing }) => {
         <div className="bg-white rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full">
             {/* A real <img>, not a CSS background: these are content, so they need alt text
                 and they're the only images Google can index. Lazy loading also stops all six
-                multi-MB files racing the critical path. */}
+                files racing the critical path. */}
             {/* eslint-disable-next-line @next/next/no-img-element --
                 next/image cannot optimise here: next.config.ts sets output:"export" with
                 images.unoptimized, so <Image> would add markup for zero benefit. */}
             <img
                 src={listing.image}
-                srcSet={`${listing.image.replace(".webp", "-800.webp")} 800w, ${listing.image} 1600w`}
+                srcSet={`${listing.image.replace(".webp", "-800.webp")} 800w, ${listing.image} 1440w`}
                 sizes="(min-width: 1024px) 405px, (min-width: 768px) 45vw, 92vw"
                 alt={`${listing.name} — ${listing.locality}`}
                 width={800}
@@ -134,13 +134,19 @@ const ListingCard = ({ listing }: { listing: Listing }) => {
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-50 text-slate-600 text-sm">
                         <BedDouble size={14} /> {listing.rooms} camere
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm font-medium">
-                        <TrendingUp size={14} /> {listing.occupancy}
-                    </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-sm font-medium">
-                        <Star size={14} fill="currentColor" /> {listing.rating}
+                        <Star size={14} fill="currentColor" /> {listing.rating} · {listing.reviews} recensioni
                     </span>
                 </div>
+
+                <a
+                    href={listing.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-slate-900 hover:text-slate-600 transition-colors w-fit"
+                >
+                    Vedi su Airbnb <ArrowUpRight size={16} />
+                </a>
             </div>
         </div>
     )
@@ -150,7 +156,19 @@ export default function Alloggi() {
     return (
         <>
             <Section>
-                <div className="bg-[url('/interior5.webp')] bg-center bg-cover overflow-hidden rounded-2xl min-h-[70vh] w-full relative flex flex-col justify-between p-6 lg:p-10">
+                <div className="overflow-hidden rounded-2xl min-h-[70vh] w-full relative flex flex-col justify-between p-6 lg:p-10">
+                    {/* A real <img> rather than a CSS background: this is the LCP element, and only
+                        markup lets the preload scanner find it early and fetch it at high priority. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element -- see ListingCard */}
+                    <img
+                        src="/interior5.webp"
+                        srcSet="/interior5-800.webp 800w, /interior5.webp 1600w"
+                        sizes="(min-width: 1280px) 1200px, 94vw"
+                        alt=""
+                        fetchPriority="high"
+                        decoding="async"
+                        className="absolute inset-0 size-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-slate-950/30" />
 
                     <div className="relative z-10 max-w-3xl">
@@ -187,7 +205,7 @@ export default function Alloggi() {
                     eyebrow="Gli alloggi"
                     accent="blue"
                     title="Una selezione dal portafoglio"
-                    text="Immobili reali in gestione, con i numeri che producono. Nessuna vetrina: quello che vedi è quello che gestiamo."
+                    text="Immobili reali in gestione, con le recensioni dei loro ospiti. Nessuna vetrina: quello che vedi è quello che gestiamo."
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -209,6 +227,8 @@ export default function Alloggi() {
                 cta="Richiedi la valutazione"
                 href="/contatti"
             />
+
+            <BreadcrumbSchema name="Alloggi" path="/alloggi/" />
         </>
     );
 }

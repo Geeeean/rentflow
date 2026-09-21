@@ -12,6 +12,9 @@ const SOCIALS = [
     { label: "Whatsapp", href: CONTACT_HREF.whatsapp },
 ];
 
+// Static export: this is the build year, which a routine redeploy keeps current.
+const YEAR = new Date().getFullYear();
+
 const Footer = () => {
     return (
         <div className="w-full flex justify-center bg-slate-950 snap-start">
@@ -34,7 +37,7 @@ const Footer = () => {
                         <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
                     </div>
 
-                    <p className="hidden lg:block text-stone-400">® 2025 Rentflow. Tutti i diritti riservati.</p>
+                    <p className="hidden lg:block text-stone-400">© {YEAR} Rentflow. Tutti i diritti riservati. · P.IVA {CONTACT.vat}</p>
                 </div>
 
                 <div className="lg:w-[35%]">
@@ -74,7 +77,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <p className="lg:hidden block text-stone-400">® 2025 Rentflow. Tutti i diritti riservati.</p>
+                <p className="lg:hidden block text-stone-400">© {YEAR} Rentflow. Tutti i diritti riservati. · P.IVA {CONTACT.vat}</p>
             </div>
         </div>
     )

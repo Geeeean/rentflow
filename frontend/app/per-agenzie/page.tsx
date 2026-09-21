@@ -5,12 +5,16 @@ import { FeatureCard } from "@/components/feature_card";
 import { StepCard } from "@/components/step_card";
 import { CtaPill } from "@/components/cta_pill";
 import { ClosingCta } from "@/components/closing_cta";
+import { BreadcrumbSchema } from "@/components/structured_data";
+
+const TITLE = "Collaborazione per agenzie immobiliari in Umbria";
+const DESCRIPTION = "Per le agenzie immobiliari di Perugia e dell'Umbria: prendiamo in affitto gli immobili sfitti dei tuoi clienti e ti riconosciamo la provvigione su ognuno.";
 
 export const metadata: Metadata = {
-    title: "Per agenzie",
-    description: "Collabora con Rentflow: un servizio in più per i tuoi clienti e una provvigione in più per la tua agenzia.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "/per-agenzie/" },
-    openGraph: { title: "Per agenzie", description: "Collabora con Rentflow: un servizio in più per i tuoi clienti e una provvigione in più per la tua agenzia.", url: "/per-agenzie/" },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: "/per-agenzie/" },
 };
 
 const BENEFITS = [
@@ -146,6 +150,8 @@ export default function PerAgenzie() {
                 cta="Scrivici"
                 href="/contatti"
             />
+
+            <BreadcrumbSchema name="Per agenzie" path="/per-agenzie/" />
         </>
     );
 }

@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     alternates: { canonical: "/privacy-policy/" },
     openGraph: { title: "Informativa privacy", description: DESCRIPTION, url: "/privacy-policy/" },
+    // Kept out of search until the "Da completare" sections below are filled in: an indexed
+    // page with visible draft notes reads as an unfinished site. Remove this (and re-add the
+    // route in app/sitemap.ts) once the legal details are final.
+    robots: { index: false, follow: true },
 };
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
@@ -41,7 +45,7 @@ export default function PrivacyPolicy() {
 
                 <H2>1. Titolare del trattamento</H2>
                 <P>
-                    Il titolare del trattamento è Rentflow, con sede in Perugia (Umbria).
+                    Il titolare del trattamento è Rentflow (P.IVA {CONTACT.vat}), con sede in Perugia (Umbria).
                     Per qualsiasi questione relativa ai tuoi dati puoi scrivere a{" "}
                     <a href={CONTACT_HREF.email} className="font-semibold text-slate-900 underline underline-offset-2">{CONTACT.email}</a>{" "}
                     o telefonare al{" "}
@@ -49,7 +53,7 @@ export default function PrivacyPolicy() {
                 </P>
                 <P>
                     <strong className="text-slate-900">Da completare prima della pubblicazione:</strong> ragione
-                    sociale completa, indirizzo della sede legale, P.IVA e codice fiscale, ed eventuale
+                    sociale completa, indirizzo della sede legale e codice fiscale, ed eventuale
                     responsabile della protezione dei dati (DPO), se nominato.
                 </P>
 

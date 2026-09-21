@@ -3,14 +3,17 @@ import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-
 import { Section, SectionHeading } from "@/components/section";
 import { LeadForm } from "@/components/lead_form";
 import { FAQs } from "@/components/faqs";
-import { FaqSchema } from "@/components/structured_data";
+import { BreadcrumbSchema, FaqSchema } from "@/components/structured_data";
 import { CONTACT, CONTACT_HREF } from "@/lib/contact";
 
+const TITLE = "Contatti e valutazione gratuita a Perugia";
+const DESCRIPTION = "Richiedi la valutazione gratuita del tuo immobile a Perugia o in Umbria: rispondiamo entro 24 ore. Email, telefono e WhatsApp, dal lunedì al venerdì.";
+
 export const metadata: Metadata = {
-    title: "Contatti",
-    description: "Parliamone: richiedi la valutazione gratuita del tuo immobile e ricevi una risposta entro 24 ore.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "/contatti/" },
-    openGraph: { title: "Contatti", description: "Parliamone: richiedi la valutazione gratuita del tuo immobile e ricevi una risposta entro 24 ore.", url: "/contatti/" },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: "/contatti/" },
 };
 
 const CONTACTS = [
@@ -122,6 +125,8 @@ export default function Contatti() {
                     </div>
                 </div>
             </Section>
+
+            <BreadcrumbSchema name="Contatti" path="/contatti/" />
         </>
     );
 }

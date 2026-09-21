@@ -26,15 +26,22 @@ const OrganizationSchema = () => (
         image: `${SITE_URL}/opengraph-image`,
         email: CONTACT.email,
         telephone: CONTACT.phone,
+        vatID: CONTACT.vat,
         address: {
             "@type": "PostalAddress",
             addressLocality: "Perugia",
             addressRegion: "Umbria",
             addressCountry: "IT",
         },
-        areaServed: {
-            "@type": "AdministrativeArea",
-            name: "Umbria",
+        areaServed: [
+            { "@type": "City", name: "Perugia" },
+            { "@type": "AdministrativeArea", name: "Umbria" },
+        ],
+        openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: CONTACT.openingHours.days,
+            opens: CONTACT.openingHours.opens,
+            closes: CONTACT.openingHours.closes,
         },
         knowsLanguage: "it-IT",
         sameAs: [
@@ -65,4 +72,40 @@ const FaqSchema = () => (
     }} />
 );
 
-export { OrganizationSchema, FaqSchema }
+/** One per inner page: Home › {name}. `path` is the page's canonical path, trailing slash included. */
+const BreadcrumbSchema = ({ name, path }: { name: string, path: string }) => (
+    <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name, item: `${SITE_URL}${path}` },
+        ],
+    }} />
+);
+
+/**
+ * The services on /servizi, each tied back to the organization by @id. Takes the same array
+ * the page renders, so the markup can't drift from the visible text.
+ */
+const ServicesSchema = ({ services }: { services: { id: string, title: string, text: string }[] }) => (
+    <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: services.map((service, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Service",
+                "@id": `${SITE_URL}/servizi/#${service.id}`,
+                name: service.title,
+                description: service.text,
+                url: `${SITE_URL}/servizi/#${service.id}`,
+                provider: { "@id": `${SITE_URL}/#organization` },
+                areaServed: { "@type": "AdministrativeArea", name: "Umbria" },
+            },
+        })),
+    }} />
+);
+
+export { OrganizationSchema, FaqSchema, BreadcrumbSchema, ServicesSchema }

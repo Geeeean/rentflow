@@ -2,16 +2,45 @@ import { Hono } from "hono";
 import { serve } from "bun";
 import { serveStatic } from "hono/bun";
 import { cors } from "hono/cors";
+import { secureHeaders } from "hono/secure-headers";
 import { validateLead, persistLead, pruneExpiredLeads } from "./leads";
 import { sendLeadNotification, mailerConfigured } from "./mailer";
 
-const PORT = 3001
+// Railway (and most hosts) assign the port through $PORT; 3001 is the local default.
+const PORT = Number(process.env.PORT) || 3001;
 
 // Must match RETENTION_MONTHS in frontend/lib/privacy.ts, which is what the published
 // privacy notice tells people.
 const RETENTION_MONTHS = 24;
 
 const app = new Hono();
+
+// The frontend is a static export, so Next's headers() can't set these — this process is
+// the only place they can come from. Scripts and styles keep 'unsafe-inline' because the
+// export hydrates through inline scripts; the policy still blocks third-party origins,
+// framing, plugins and off-site form posts.
+app.use('*', secureHeaders({
+    contentSecurityPolicy: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["'self'", "data:"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+        formAction: ["'self'"],
+        frameAncestors: ["'self'"],
+    },
+    referrerPolicy: "strict-origin-when-cross-origin",
+    // Social crawlers and chat apps fetch og:image cross-origin; same-origin would block previews.
+    crossOriginResourcePolicy: "cross-origin",
+    permissionsPolicy: {
+        camera: [],
+        microphone: [],
+        geolocation: [],
+    },
+}));
 
 // Dev only: `next dev` serves the frontend from :3000, so the POST below is cross-origin.
 // In production this same process serves the static export, so requests are same-origin.
@@ -53,7 +82,16 @@ app.post('/api/leads', async (c) => {
     return c.json({ message: "Richiesta ricevuta." });
 });
 
-app.use('/*', serveStatic({ root: './frontend/' }));
+// Next's image routes (opengraph-image, apple-icon) are exported as extensionless files, which
+// serveStatic would send as application/octet-stream — and link previews reject that.
+const EXTENSIONLESS_PNG = /\/(opengraph-image|apple-icon)$/;
+
+app.use('/*', serveStatic({
+    root: './frontend/',
+    onFound: (path, c) => {
+        if (EXTENSIONLESS_PNG.test(path)) c.header('Content-Type', 'image/png');
+    },
+}));
 
 // This is a multi-page static export, not an SPA: serving index.html for unmatched paths
 // would answer every typo and stale link with the home page under HTTP 200, which hides

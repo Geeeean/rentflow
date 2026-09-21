@@ -3,8 +3,9 @@ const SITE_URL = "https://rentflow.it";
 
 const SITE_NAME = "Rentflow";
 
+// Kept under ~155 characters so Google shows it whole instead of truncating it.
 const SITE_DESCRIPTION =
-    "Gestione immobiliare a Perugia e in Umbria: affitti brevi e medio termine, pricing dinamico, " +
-    "pulizie e manutenzione. Massimizziamo il rendimento del tuo immobile senza pensieri.";
+    "Gestione affitti brevi e medio termine a Perugia e in Umbria: pricing dinamico, ospiti, " +
+    "pulizie e manutenzione. Valutazione gratuita entro 24 ore.";
 
 export { SITE_URL, SITE_NAME, SITE_DESCRIPTION }

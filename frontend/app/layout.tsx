@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     // Required before any relative canonical or og:image resolves to an absolute URL.
     metadataBase: new URL(SITE_URL),
     title: {
-        default: `${SITE_NAME} — Il partner strategico per il tuo immobile`,
+        default: `Gestione Affitti Brevi a Perugia e in Umbria | ${SITE_NAME}`,
         // Pages export a bare title ("Servizi") and the suffix is applied here, once.
         template: `%s | ${SITE_NAME}`,
     },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         locale: "it_IT",
         siteName: SITE_NAME,
         url: "/",
-        title: `${SITE_NAME} — Il partner strategico per il tuo immobile`,
+        title: `Gestione Affitti Brevi a Perugia e in Umbria | ${SITE_NAME}`,
         description: SITE_DESCRIPTION,
     },
     twitter: {

@@ -129,7 +129,7 @@ const LeadForm = ({ className }: Props) => {
             <div className="mb-1">
                 <p className="font-serif text-2xl text-slate-900">Richiedi la valutazione <span className="font-medium">gratuita</span></p>
                 <p className="text-slate-400 font-medium text-sm">
-                    Ricevi il report Pal. personalizzato entro 24 ore. Se non troviamo margine positivo, ti diciamo perché. Zero perdite di tempo
+                    Ricevi il report personalizzato entro 24 ore. Se non troviamo margine positivo, ti diciamo perché. Zero perdite di tempo
                 </p>
             </div>
 

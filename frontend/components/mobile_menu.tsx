@@ -29,7 +29,7 @@ const MobileMenu = () => {
                 aria-label={open ? "Chiudi il menu" : "Apri il menu"}
                 aria-expanded={open}
                 onClick={() => setOpen(prev => !prev)}
-                className="relative z-50 p-2 rounded-full bg-slate-100 text-slate-900 active:scale-95 transition-transform"
+                className="relative z-50 p-3 rounded-full bg-slate-100 text-slate-900 active:scale-95 transition-transform"
             >
                 <motion.span key={open ? "close" : "open"} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} className="block">
                     {open ? <X size={20} /> : <Menu size={20} />}

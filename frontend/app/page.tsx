@@ -33,8 +33,8 @@ const HERO_POINTS = [
 ];
 
 const STATS = [
-    { val: "85%", lab: "Occupazione Media" },
-    { val: "4.8/5", lab: "Valutazione Ospiti" },
+    { val: "87%", lab: "Occupazione Media" },
+    { val: "4.82/5", lab: "Valutazione Ospiti" },
     { val: "50+", lab: "Immobili Gestiti" },
     { val: "24/7", lab: "Supporto Attivo" },
 ];
@@ -67,16 +67,22 @@ export default function Home() {
                     which a 5-column grid can't express without starving the headline. */}
                 <div className="w-full flex flex-col lg:grid grid-cols-12 grid-rows-5 gap-5">
                     <div className="col-span-7 row-span-4 lg:py-6">
-                        <span className="text-sm font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Socio Strategico Immobiliare</span>
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif mt-5">
+                        {/* The eyebrow lives inside the h1 so the heading carries the service and
+                            the city — the terms owners actually search for. */}
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif">
+                            <span className="text-sm font-sans font-bold uppercase tracking-widest text-emerald-600 mb-8 block">Gestione affitti brevi a Perugia</span>
                             <span className="block">RENTFLOW</span>
                             <span className="block italic text-blue-950">il partner strategico</span>
                             <span className="block">per il tuo immobile.</span>
                         </h1>
                         <p className="text-lg lg:text-xl text-slate-600 my-6">
-                            Massimizziamo il rendimento, proteggiamo il valore e riduciamo i rischi.
+                            Gestiamo affitti brevi e medio termine a Perugia e in tutta l&apos;Umbria:
+                            massimizziamo il rendimento, proteggiamo il valore e riduciamo i rischi.
                             Soluzioni modulabili: full-service o supporto mirato.
                         </p>
+
+                        {/* On mobile the form stacks below the fold; this gets the ask on screen. */}
+                        <CtaPill label="Richiedi la valutazione gratuita" href="#valutazione" className="lg:hidden mb-8" />
 
                         <div className="flex flex-col gap-6">
                             {HERO_POINTS.map(item => <CheckPoint key={item.title} {...item} />)}
@@ -91,12 +97,12 @@ export default function Home() {
                     {/* The form is in normal flow and the photos are the absolute layer, not
                         the other way round. Previously the form was `absolute inset-8`, which
                         pinned its height to the column and clipped the taller content. */}
-                    <div className="col-span-5 row-span-5 relative flex items-center">
+                    <div id="valutazione" className="col-span-5 row-span-5 relative flex items-center">
                         <div className="hidden lg:grid absolute inset-0 grid-rows-5 gap-5 *:rounded-lg *:shadow">
-                            <div className="relative shadow-lg row-span-3 bg-[url('/interior1.webp')] bg-center bg-cover overflow-hidden">
+                            <div className="relative shadow-lg row-span-3 bg-[url('/interior1-800.webp')] bg-center bg-cover overflow-hidden">
                                 <div className="absolute inset-0 backdrop-blur-xs"></div>
                             </div>
-                            <div className="relative row-span-2 shadow-lg bg-[url('/interior4.webp')] bg-center bg-cover overflow-hidden">
+                            <div className="relative row-span-2 shadow-lg bg-[url('/interior4-800.webp')] bg-center bg-cover overflow-hidden">
                                 <div className="absolute inset-0 backdrop-blur-xs"></div>
                             </div>
                         </div>
@@ -168,7 +174,7 @@ export default function Home() {
             </Section>
 
             <Section>
-                <div className="bg-[url('/interior5.webp')] bg-center bg-cover overflow-hidden rounded-2xl w-full relative flex flex-col justify-between min-h-[70vh] lg:min-h-[75vh] p-6 lg:p-8 gap-10">
+                <div className="bg-[url('/interior5-800.webp')] lg:bg-[url('/interior5.webp')] bg-center bg-cover overflow-hidden rounded-2xl w-full relative flex flex-col justify-between min-h-[70vh] lg:min-h-[75vh] p-6 lg:p-8 gap-10">
                     <div className="absolute inset-0 bg-slate-950/25" />
 
                     <p className="relative z-10 text-white lg:max-w-xl text-lg lg:text-xl font-medium">

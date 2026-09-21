@@ -5,13 +5,18 @@ import { CheckPoint } from "@/components/check_point";
 import { ProcessSection } from "@/components/process_section";
 import { CtaCard } from "@/components/cta_card";
 import { CtaPill } from "@/components/cta_pill";
+import { BreadcrumbSchema, ServicesSchema } from "@/components/structured_data";
+import Link from "next/link";
 import { ReactNode } from "react";
 
+const TITLE = "Servizi di gestione immobiliare a Perugia";
+const DESCRIPTION = "Gestione affitti brevi e medio termine a Perugia e in Umbria, più intermediazione, analisi investimenti e consulenza fiscale. Servizi modulari e combinabili.";
+
 export const metadata: Metadata = {
-    title: "Servizi",
-    description: "Cinque servizi modulari per la gestione del tuo immobile: gestioni brevi, medio termine, intermediazione, analisi investimenti e consulenza fiscale.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "/servizi/" },
-    openGraph: { title: "Servizi", description: "Cinque servizi modulari per la gestione del tuo immobile: gestioni brevi, medio termine, intermediazione, analisi investimenti e consulenza fiscale.", url: "/servizi/" },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: "/servizi/" },
 };
 
 type Service = {
@@ -103,14 +108,20 @@ export default function Servizi() {
             <Section>
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
                     <div className="lg:w-1/2">
-                        <span className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-3 block">Soluzioni Modulari</span>
                         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif text-slate-900 mb-6">
+                            <span className="text-sm font-sans font-bold uppercase tracking-widest text-blue-600 mb-3 block">Gestione immobiliare a Perugia e in Umbria</span>
                             Cinque servizi, <br />
                             <span className="italic text-blue-950">infinite combinazioni.</span>
                         </h1>
                         <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-8">
                             Non vendiamo un pacchetto unico. Prendi il full-service o solo il pezzo che ti serve:
                             paghi quello che usi, e puoi cambiare configurazione quando cambiano le tue esigenze.
+                        </p>
+                        <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                            Operiamo da Perugia in tutta l&apos;Umbria, per proprietari privati, investitori e{" "}
+                            <Link href="/per-agenzie" className="font-semibold text-slate-900 underline underline-offset-4">agenzie immobiliari</Link>.
+                            Gli immobili che gestiamo oggi, con le recensioni dei loro ospiti, sono nella pagina{" "}
+                            <Link href="/alloggi" className="font-semibold text-slate-900 underline underline-offset-4">alloggi</Link>.
                         </p>
                         <CtaPill label="Parliamone" href="/contatti" />
                     </div>
@@ -171,6 +182,9 @@ export default function Servizi() {
                     />
                 </div>
             </Section>
+
+            <ServicesSchema services={SERVICES} />
+            <BreadcrumbSchema name="Servizi" path="/servizi/" />
         </>
     );
 }
