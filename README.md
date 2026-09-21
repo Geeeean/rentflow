@@ -34,6 +34,49 @@ bun run build   # backend -> dist/index.js, frontend -> dist/frontend/
 bun run start   # http://localhost:3001
 ```
 
+Il server ascolta sulla porta `$PORT` se definita, altrimenti `3001`.
+
+## Deploy su Railway
+
+La configurazione di build e avvio è versionata in `railway.json`: Railway la legge a ogni
+deploy, quindi non va ripetuta nel pannello. Build con `bun run build`, avvio con
+`bun run start`, healthcheck su `/`.
+
+### Primo setup (una volta sola)
+
+1. **New Project → Deploy from GitHub repo** → `Geeeean/rentflow`. Lascia la *Root Directory*
+   vuota: il build parte dalla radice del monorepo.
+2. **Settings → Source → Branch**: `master`. Con il repo collegato, *ogni push su `master`
+   avvia un deploy automatico*. Gli altri branch non vengono deployati.
+3. **Volume** (tasto destro sul servizio → *Attach Volume*), mount path `/data`. Senza volume
+   il filesystem è effimero e **ogni deploy cancella i lead**.
+4. **Variables**:
+
+   | Variabile | Valore |
+   |---|---|
+   | `LEADS_FILE` | `/data/leads.jsonl` |
+   | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | credenziali SMTP (vedi `backend/.env.example`) |
+   | `LEAD_NOTIFY_TO`, `LEAD_NOTIFY_FROM` | destinatario e mittente delle notifiche |
+
+   `PORT` la imposta Railway: non definirla.
+5. **Settings → Networking → Custom Domain**: aggiungi `rentflow.it` (e `www.rentflow.it`) e
+   crea presso il registrar i record DNS che Railway indica. Il certificato HTTPS è automatico.
+
+### Dopo ogni deploy
+
+```bash
+bun run indexnow   # notifica a Bing & co. gli URL della sitemap pubblicata
+```
+
+### Note
+
+- La sitemap ricava `lastmod` dalla cronologia git di ogni pagina. Se l'ambiente di build non
+  ha la cartella `.git`, la sitemap esce senza `lastmod` (vedi `frontend/app/sitemap.ts`):
+  meglio nessuna data che una sbagliata.
+- Gli header di sicurezza (CSP, HSTS, ecc.) li imposta il backend Hono, non Railway: se
+  aggiungi script o risorse di terze parti (analytics, mappe, font esterni) va aggiornata la
+  CSP in `backend/src/index.ts`, altrimenti il browser li blocca.
+
 ## Pagine
 
 `/` · `/servizi` · `/alloggi` · `/contatti` · `/per-agenzie` · `/about-us` · `/privacy-policy`
