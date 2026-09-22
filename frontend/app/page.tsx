@@ -35,7 +35,7 @@ const HERO_POINTS = [
 const STATS = [
     { val: "87%", lab: "Occupazione Media" },
     { val: "4.82/5", lab: "Valutazione Ospiti" },
-    { val: "50+", lab: "Immobili Gestiti" },
+    { val: "12+", lab: "Immobili Gestiti" },
     { val: "24/7", lab: "Supporto Attivo" },
 ];
 

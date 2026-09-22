@@ -91,7 +91,7 @@ const LISTINGS: Listing[] = [
 const PORTFOLIO_STATS = [
     { val: "87%", lab: "Occupazione media" },
     { val: "4.82", lab: "Rating medio" },
-    { val: "50+", lab: "Immobili gestiti" },
+    { val: "12+", lab: "Immobili gestiti" },
     { val: "< 1h", lab: "Tempo di risposta" },
 ];
 
