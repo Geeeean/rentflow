@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/section";
-import { CONTACT, CONTACT_HREF } from "@/lib/contact";
+import { CONTACT, CONTACT_HREF, PRIMARY_PHONE, telHref } from "@/lib/contact";
 import { PRIVACY_POLICY_VERSION, RETENTION_MONTHS } from "@/lib/privacy";
 
 const DESCRIPTION = "Informativa privacy di Rentflow ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR).";
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
                     Per qualsiasi questione relativa ai tuoi dati puoi scrivere a{" "}
                     <a href={CONTACT_HREF.email} className="font-semibold text-slate-900 underline underline-offset-2">{CONTACT.email}</a>{" "}
                     o telefonare al{" "}
-                    <a href={CONTACT_HREF.phone} className="font-semibold text-slate-900 underline underline-offset-2">{CONTACT.phone}</a>.
+                    <a href={telHref(PRIMARY_PHONE)} className="font-semibold text-slate-900 underline underline-offset-2">{PRIMARY_PHONE}</a>.
                 </P>
                 <P>
                     <strong className="text-slate-900">Da completare prima della pubblicazione:</strong> ragione

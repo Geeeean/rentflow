@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { NAV_LINKS } from "./nav_links";
 import { CtaPill } from "./cta_pill";
-import { CONTACT, CONTACT_HREF } from "@/lib/contact";
+import { CONTACT, CONTACT_HREF, telHref } from "@/lib/contact";
 
 const panel = {
     hidden: { opacity: 0, y: -12 },
@@ -72,7 +72,9 @@ const MobileMenu = () => {
 
                         <div className="mt-auto pt-10 text-slate-500 text-sm flex flex-col gap-1">
                             <a href={CONTACT_HREF.email} className="hover:text-slate-900 transition-colors">{CONTACT.email}</a>
-                            <a href={CONTACT_HREF.phone} className="hover:text-slate-900 transition-colors">{CONTACT.phone}</a>
+                            {CONTACT.phones.map(({ name, number }) => (
+                                <a key={number} href={telHref(number)} className="hover:text-slate-900 transition-colors">{number} · {name}</a>
+                            ))}
                             <p>{CONTACT.locality}</p>
                         </div>
                     </motion.div>

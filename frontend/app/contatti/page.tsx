@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/section";
 import { LeadForm } from "@/components/lead_form";
 import { FAQs } from "@/components/faqs";
 import { BreadcrumbSchema, FaqSchema } from "@/components/structured_data";
-import { CONTACT, CONTACT_HREF } from "@/lib/contact";
+import { CONTACT, CONTACT_HREF, telHref } from "@/lib/contact";
 
 const TITLE = "Contatti e valutazione gratuita a Perugia";
 const DESCRIPTION = "Richiedi la valutazione gratuita del tuo immobile a Perugia o in Umbria: rispondiamo entro 24 ore. Email, telefono e WhatsApp, dal lunedì al venerdì.";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const CONTACTS = [
     { icon: Mail, label: "Email", value: CONTACT.email, href: CONTACT_HREF.email },
-    { icon: Phone, label: "Telefono", value: CONTACT.phone, href: CONTACT_HREF.phone },
+    ...CONTACT.phones.map(({ name, number }) => ({ icon: Phone, label: name, value: number, href: telHref(number) })),
     { icon: MessageCircle, label: "Whatsapp", value: "Scrivici in chat", href: CONTACT_HREF.whatsapp },
 ];
 

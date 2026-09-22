@@ -1,4 +1,4 @@
-import { CONTACT, CONTACT_HREF } from "@/lib/contact";
+import { CONTACT, CONTACT_HREF, PRIMARY_PHONE } from "@/lib/contact";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { FAQS } from "./faqs";
 
@@ -25,7 +25,7 @@ const OrganizationSchema = () => (
         logo: `${SITE_URL}/icon.svg`,
         image: `${SITE_URL}/opengraph-image`,
         email: CONTACT.email,
-        telephone: CONTACT.phone,
+        telephone: PRIMARY_PHONE,
         vatID: CONTACT.vat,
         address: {
             "@type": "PostalAddress",

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { NAV_LINKS } from "./nav_links"
-import { CONTACT, CONTACT_HREF } from "@/lib/contact"
+import { CONTACT, CONTACT_HREF, telHref } from "@/lib/contact"
 
 const SOCIALS = [
     { label: "Facebook", href: "https://facebook.com" },
@@ -24,7 +24,9 @@ const Footer = () => {
                         <div className="text-5xl sm:text-7xl lg:text-9xl font-bold">rentflow.</div>
                         <div className="font-medium flex flex-col lg:flex-row lg:gap-10 justify-between">
                             <a href={CONTACT_HREF.email} className="hover:text-stone-300 transition-colors">{CONTACT.email}</a>
-                            <a href={CONTACT_HREF.phone} className="hover:text-stone-300 transition-colors">{CONTACT.phone}</a>
+                            {CONTACT.phones.map(({ name, number }) => (
+                                <a key={number} href={telHref(number)} className="hover:text-stone-300 transition-colors">{number} · {name}</a>
+                            ))}
                             <p>{CONTACT.locality}</p>
                         </div>
                     </div>
